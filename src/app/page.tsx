@@ -1,7 +1,23 @@
+import { BlogSection } from "@/components/blog-section";
+import { HeroSection } from "@/components/hero-section";
+import { MissionSection } from "@/components/mission-section";
+import { SiteFooter } from "@/components/site-footer";
+import { ServicesSection } from "@/components/services-section";
+import { SiteNav } from "@/components/site-nav";
+import { SolutionSection } from "@/components/solution-section";
+import { TestimonialSection } from "@/components/testimonial-section";
+
 export default function Home() {
   return (
-    <main className="flex h-screen items-center justify-center bg-black">
-      <h1 className="text-6xl font-bold text-white">plumber</h1>
+    <main className="min-h-screen bg-[#eff6ff]">
+      <SiteNav />
+      <HeroSection />
+      <MissionSection />
+      <SolutionSection />
+      <ServicesSection />
+      <TestimonialSection />
+      <BlogSection />
+      <SiteFooter />
     </main>
   );
 }

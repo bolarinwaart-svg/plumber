@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Heatwave Plumbing
+
+Responsive marketing site for a plumbing and heating company, built with Next.js App Router and Tailwind CSS.
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in the browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev
+npm run build
+npm run start
+npm run lint
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```text
+src/app/page.tsx              Main page composition
+src/app/globals.css           Global styles, theme tokens, site container
+src/components/site-nav.tsx   Header navigation
+src/components/hero-section.tsx
+src/components/mission-section.tsx
+src/components/solution-section.tsx
+src/components/services-section.tsx
+src/components/testimonial-section.tsx
+src/components/blog-section.tsx
+src/components/site-footer.tsx
+public/                       Site images exported from the Figma design
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Layout Rules
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Use the shared `.site-container` class for top-level page sections.
+- `.site-container` keeps content centered with a maximum width of `1440px`.
+- Horizontal page gutters are responsive through `--site-gutter: clamp(16px, 4vw, 32px)`.
+- Navigation and page sections should sit inside this container so the page edges stay consistent.
 
-## Deploy on Vercel
+## Typography
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Font sizes in this project should use `rem`, not `px`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Use Tailwind's built-in text utilities when possible because they already compile to `rem`:
+
+```tsx
+className="text-base lg:text-xl"
+```
+
+When a custom Figma size is needed, use an arbitrary `rem` value:
+
+```tsx
+className="text-[1.875rem] lg:text-[3rem]"
+```
+
+Reference conversion:
+
+```text
+21px  = 1.3125rem
+28px  = 1.75rem
+30px  = 1.875rem
+32px  = 2rem
+40px  = 2.5rem
+45px  = 2.8125rem
+48px  = 3rem
+56px  = 3.5rem
+150px = 9.375rem
+```
+
+Pixel values are still acceptable for non-font design values such as layout dimensions, border radius, image sizing, spacing, and container widths when they match the Figma layout.
+
+## Responsive Behavior
+
+- Sections are mobile-first and expand at Tailwind breakpoints.
+- Desktop layouts use multi-column grids where the Figma design requires side-by-side content.
+- Mobile layouts stack content vertically and keep text readable without fixed desktop line breaks.
+- The hero paragraph uses a desktop-only line break to match the Figma text wrap.
+
+## Design Source
+
+The page is being implemented from the Heatwave Plumbing Figma design. Keep future section updates aligned with the Figma desktop and mobile frames.
+
+## Verification
+
+Before handing off layout or styling changes, run:
+
+```bash
+npm run build
+npm run lint
+```
