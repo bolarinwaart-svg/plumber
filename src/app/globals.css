@@ -19,7 +19,7 @@ body {
 }
 
 .site-container {
-  --site-gutter: clamp(16px, 4vw, 32px);
+  --site-gutter: clamp(1rem, 4vw, 2rem);
   box-sizing: border-box;
   width: 100%;
   max-width: 1440px;
