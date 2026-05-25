@@ -3,7 +3,8 @@ import Image from "next/image";
 import { PrimaryPillButton } from "@/components/ui/primary-pill-button";
 import { SplitContentSection } from "@/components/ui/split-content-section";
 
-const contactImageSecondary = "https://www.figma.com/api/mcp/asset/4a0a710e-6093-4d49-be3b-c5522d03c36c";
+const contactImageSecondary =
+  "https://www.figma.com/api/mcp/asset/97658420-88fa-47f9-ad00-6ace0280cb18";
 
 export function ContactFormSection() {
   return (
@@ -32,7 +33,7 @@ export function ContactFormSection() {
           alt="Plumber writing notes on a clipboard"
           fill
           sizes="(min-width: 1024px) 50vw, calc(100vw - 32px)"
-          className="object-cover object-bottom"
+          className="object-cover object-center"
         />
       }
     >
