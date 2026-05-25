@@ -1,5 +1,4 @@
 import { PrimaryPillButton } from "@/components/ui/primary-pill-button";
-import { SectionShell } from "@/components/ui/section-shell";
 
 const navigationLinks = [
   { label: "Home", href: "/" },
@@ -20,14 +19,9 @@ const legalLinks = ["Privacy Policy", "Terms of Service", "Cookies Settings"];
 
 export function SiteFooter() {
   return (
-    <footer className="pb-4">
-      <SectionShell
-        as="div"
-        tone="blue"
-        radius="lg"
-        padding="lg"
-        innerClassName="flex flex-col gap-10 text-[#eff6ff] sm:gap-12 xl:gap-20 xl:px-4 xl:py-8"
-      >
+    <footer className="site-container pb-4">
+      <div className="overflow-hidden rounded-[30px] bg-[#1d3eb0] px-4 py-8 text-[#eff6ff] sm:px-5 sm:py-10">
+        <div className="flex flex-col gap-10 sm:gap-12 xl:gap-20 xl:px-4 xl:py-8">
         <div>
           <p className="max-w-full text-[clamp(3rem,14vw,9.375rem)] leading-none font-medium text-white">
             HEATWAVE
@@ -139,7 +133,8 @@ export function SiteFooter() {
             </div>
           </div>
         </div>
-      </SectionShell>
+        </div>
+      </div>
     </footer>
   );
 }
