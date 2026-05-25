@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-import { BadgeChip } from "@/components/ui/badge-chip";
 import { PrimaryPillButton } from "@/components/ui/primary-pill-button";
 
 type NavItem = {
@@ -46,15 +45,17 @@ export function SiteNav({
           Heatwave
         </Link>
 
-        <div className="hidden h-14 min-w-0 items-center gap-2 overflow-hidden rounded-[60px] bg-white lg:flex xl:h-[66px] xl:gap-4">
+        <div className="hidden h-[66px] min-w-0 items-center gap-4 overflow-hidden rounded-[60px] bg-white lg:flex">
           {navItems.map((item) => (
             <NavLink
               key={item.label}
               item={item}
               activePath={activePath}
               className={[
-                "flex h-full min-w-0 flex-1 items-center justify-center px-2 py-3 text-base leading-normal font-semibold whitespace-nowrap xl:text-lg",
-                isCurrentItem(item, activePath) ? "text-white" : "text-[#282828]",
+                "flex h-full min-w-0 flex-1 items-center justify-center rounded-[60px] px-2 py-3 text-[1.125rem] leading-[1.5] font-semibold whitespace-nowrap",
+                isCurrentItem(item, activePath)
+                  ? "bg-[#3a81f7] text-white"
+                  : "text-[#282828]",
               ].join(" ")}
             />
           ))}
@@ -85,7 +86,10 @@ export function SiteNav({
                     item={item}
                     activePath={activePath}
                     className={[
-                      "rounded-[18px] px-4 py-3 text-base leading-normal font-semibold text-[#282828]",
+                      "rounded-[18px] px-4 py-3 text-base leading-normal font-semibold",
+                      isCurrentItem(item, activePath)
+                        ? "bg-[#3a81f7] text-white"
+                        : "text-[#282828]",
                     ].join(" ")}
                   />
                 ))}
@@ -102,7 +106,7 @@ export function SiteNav({
 
         <PrimaryPillButton
           href="/contact"
-          className="hidden h-14 w-[156px] shrink-0 px-5 text-base leading-normal font-semibold lg:flex xl:h-[66px] xl:w-[218px] xl:text-lg"
+          className="hidden h-[66px] shrink-0 rounded-[50px] px-7 text-[1.125rem] leading-[1.5] font-semibold lg:flex"
         >
           Contact Us
         </PrimaryPillButton>
@@ -129,13 +133,7 @@ function NavLink({
         aria-current={active ? "page" : undefined}
         className={className}
       >
-        {active ? (
-          <BadgeChip size="md">
-            {item.label}
-          </BadgeChip>
-        ) : (
-          item.label
-        )}
+        {item.label}
       </Link>
     );
   }
@@ -146,13 +144,7 @@ function NavLink({
       aria-current={active ? "page" : undefined}
       className={className}
     >
-      {active ? (
-        <BadgeChip size="md">
-          {item.label}
-        </BadgeChip>
-      ) : (
-        item.label
-      )}
+      {item.label}
     </a>
   );
 }
