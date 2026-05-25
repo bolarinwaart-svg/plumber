@@ -1,4 +1,13 @@
-const navigationLinks = ["Home", "Plumbing", "Heating", "Blog", "About Us"];
+import { PrimaryPillButton } from "@/components/ui/primary-pill-button";
+import { SectionShell } from "@/components/ui/section-shell";
+
+const navigationLinks = [
+  { label: "Home", href: "/" },
+  { label: "Plumbing", href: "/plumbing" },
+  { label: "Heating", href: "/heating" },
+  { label: "Blog", href: "/blog" },
+  { label: "About Us", href: "#" },
+];
 
 const socialLinks = [
   { label: "Facebook", icon: FacebookIcon },
@@ -11,120 +20,126 @@ const legalLinks = ["Privacy Policy", "Terms of Service", "Cookies Settings"];
 
 export function SiteFooter() {
   return (
-    <footer className="site-container pb-4">
-      <div className="overflow-hidden rounded-2xl bg-[#1d3eb0] px-2 py-12 text-[#eff6ff] lg:rounded-[32px] lg:px-4 lg:py-8">
-        <div className="flex flex-col gap-8 lg:gap-20">
-          <div>
-            <p className="text-[2.8125rem] leading-none font-medium text-white lg:text-[9.375rem]">
-              HEATWAVE
+    <footer className="pb-4">
+      <SectionShell
+        as="div"
+        tone="blue"
+        radius="lg"
+        padding="lg"
+        innerClassName="flex flex-col gap-10 text-[#eff6ff] sm:gap-12 xl:gap-20 xl:px-4 xl:py-8"
+      >
+        <div>
+          <p className="max-w-full text-[clamp(3rem,14vw,9.375rem)] leading-none font-medium text-white">
+            HEATWAVE
+          </p>
+        </div>
+
+        <div className="grid gap-10 xl:grid-cols-[minmax(0,31.25rem)_minmax(0,1fr)] xl:gap-[8.75rem]">
+          <div className="flex flex-col gap-6">
+            <p className="text-base leading-[1.5] font-normal">
+              Join our newsletter to stay up to date on features and releases.
             </p>
-          </div>
 
-          <div className="grid gap-8 lg:grid-cols-[500px_minmax(0,1fr)] lg:gap-[140px]">
-            <div className="flex flex-col gap-6">
-              <p className="text-base leading-[1.5] font-normal">
-                Join our newsletter to stay up to date on features and releases.
+            <div className="flex flex-col gap-4">
+              <form className="flex flex-col gap-4 sm:flex-row sm:items-center" action="#">
+                <label className="sr-only" htmlFor="footer-email">
+                  Email address
+                </label>
+                <input
+                  id="footer-email"
+                  type="email"
+                  placeholder="Enter your email"
+                  className="min-w-0 flex-1 rounded-[30px] border border-[#eff6ff] bg-white px-5 py-3 text-base leading-[1.5] font-normal text-[#3d3d3d] outline-none"
+                />
+                <PrimaryPillButton
+                  type="submit"
+                  variant="outlined"
+                  size="md"
+                  className="sm:min-w-[11rem] xl:font-normal"
+                >
+                  Subscribe
+                </PrimaryPillButton>
+              </form>
+
+              <p className="max-w-[44rem] text-xs leading-[1.5] font-normal">
+                By subscribing you agree to with our{" "}
+                <a href="#" className="underline">
+                  Privacy Policy
+                </a>{" "}
+                and provide consent to receive updates from our company.
               </p>
-
-              <div className="flex flex-col gap-4">
-                <form className="flex flex-col gap-4 lg:flex-row" action="#">
-                  <label className="sr-only" htmlFor="footer-email">
-                    Email address
-                  </label>
-                  <input
-                    id="footer-email"
-                    type="email"
-                    placeholder="Enter your email"
-                    className="min-w-0 flex-1 rounded-[30px] border border-[#eff6ff] bg-white p-3 text-base leading-[1.5] font-normal text-[#3d3d3d] outline-none"
-                  />
-                  <button
-                    type="submit"
-                    className="inline-flex items-center justify-center rounded-[30px] border border-[#eff6ff] px-6 py-3 text-base leading-[1.5] font-semibold text-[#eff6ff] lg:font-normal"
-                  >
-                    Subscribe
-                  </button>
-                </form>
-
-                <p className="text-xs leading-[1.5] font-normal">
-                  By subscribing you agree to with our{" "}
-                  <a href="#" className="underline">
-                    Privacy Policy
-                  </a>{" "}
-                  and provide consent to receive updates from our company.
-                </p>
-              </div>
-            </div>
-
-            <div className="grid gap-8 sm:grid-cols-3 lg:flex lg:justify-between">
-              <FooterColumn title="Navigation">
-                <ul className="flex flex-col gap-1 lg:gap-0">
-                  {navigationLinks.map((link) => (
-                    <li key={link}>
-                      <a
-                        href="#"
-                        className="block py-0 text-sm leading-[1.5] font-normal lg:py-2"
-                      >
-                        {link}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </FooterColumn>
-
-              <FooterColumn title="Contact">
-                <ul className="flex flex-col">
-                  <li>
-                    <a
-                      href="tel:+15551234567"
-                      className="block py-2 text-sm leading-[17px] font-normal whitespace-nowrap"
-                    >
-                      (555) 123-4567
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="mailto:contact@heatwaveplumbing.co.uk"
-                      className="block py-2 text-sm leading-[17px] font-normal whitespace-nowrap"
-                    >
-                      contact@heatwaveplumbing.co.uk
-                    </a>
-                  </li>
-                </ul>
-              </FooterColumn>
-
-              <FooterColumn title="Social Media">
-                <ul className="flex flex-col">
-                  {socialLinks.map(({ label, icon: Icon }) => (
-                    <li key={label}>
-                      <a
-                        href="#"
-                        className="flex items-center gap-3 py-2 text-sm leading-[1.5] font-normal whitespace-nowrap"
-                      >
-                        <Icon />
-                        {label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </FooterColumn>
             </div>
           </div>
 
-          <div className="flex flex-col gap-8">
-            <div className="h-px w-full bg-[#eff6ff]" />
-            <div className="flex flex-col gap-6 text-sm leading-[1.5] font-normal whitespace-nowrap lg:flex-row lg:items-start lg:justify-between">
-              <p>© 2023 Relume. All rights reserved.</p>
-              <div className="flex flex-col gap-6 lg:flex-row">
-                {legalLinks.map((link) => (
-                  <a key={link} href="#" className="underline">
-                    {link}
-                  </a>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:flex xl:justify-between xl:gap-10">
+            <FooterColumn title="Navigation">
+              <ul className="flex flex-col gap-1 lg:gap-0">
+                {navigationLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="block py-0 text-sm leading-[1.5] font-normal xl:py-2"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
                 ))}
-              </div>
+              </ul>
+            </FooterColumn>
+
+            <FooterColumn title="Contact">
+              <ul className="flex flex-col">
+                <li>
+                  <a
+                    href="tel:+15551234567"
+                    className="block py-2 text-sm leading-[1.5] font-normal whitespace-nowrap"
+                  >
+                    (555) 123-4567
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:contact@heatwaveplumbing.co.uk"
+                    className="block py-2 text-sm leading-[1.5] font-normal break-all sm:break-normal"
+                  >
+                    contact@heatwaveplumbing.co.uk
+                  </a>
+                </li>
+              </ul>
+            </FooterColumn>
+
+            <FooterColumn title="Social Media">
+              <ul className="flex flex-col">
+                {socialLinks.map(({ label, icon: Icon }) => (
+                  <li key={label}>
+                    <a
+                      href="#"
+                      className="flex items-center gap-3 py-2 text-sm leading-[1.5] font-normal whitespace-nowrap"
+                    >
+                      <Icon />
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </FooterColumn>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-8">
+          <div className="h-px w-full bg-[#eff6ff]" />
+          <div className="flex flex-col gap-6 text-sm leading-[1.5] font-normal md:flex-row md:items-start md:justify-between">
+            <p>© 2023 Relume. All rights reserved.</p>
+            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-6 md:justify-end">
+              {legalLinks.map((link) => (
+                <a key={link} href="#" className="underline">
+                  {link}
+                </a>
+              ))}
             </div>
           </div>
         </div>
-      </div>
+      </SectionShell>
     </footer>
   );
 }

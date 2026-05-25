@@ -1,34 +1,62 @@
-const navItems = ["Home", "Plumbing", "Heating", "Blog"];
+import Link from "next/link";
 
-export function SiteNav() {
+import { BadgeChip } from "@/components/ui/badge-chip";
+import { PrimaryPillButton } from "@/components/ui/primary-pill-button";
+
+type NavItem = {
+  label: string;
+  href: string;
+  isCurrent?: (path: string) => boolean;
+};
+
+const navItems: NavItem[] = [
+  { label: "Home", href: "/", isCurrent: (path) => path === "/" },
+  {
+    label: "Plumbing",
+    href: "/plumbing",
+    isCurrent: (path) => path.startsWith("/plumbing"),
+  },
+  {
+    label: "Heating",
+    href: "/heating",
+    isCurrent: (path) => path.startsWith("/heating"),
+  },
+  {
+    label: "Blog",
+    href: "/blog",
+    isCurrent: (path) => path.startsWith("/blog"),
+  },
+];
+
+export function SiteNav({
+  activePath = "/",
+}: Readonly<{
+  activePath?: string;
+}>) {
   return (
     <header className="relative z-50 w-full bg-[#eff6ff] py-2 sm:py-3 lg:py-4">
       <nav
         aria-label="Main navigation"
         className="site-container grid min-w-0 grid-cols-[1fr_auto] items-center gap-3 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-4"
       >
-        <a
-          href="#"
+        <Link
+          href="/"
           className="min-w-0 text-2xl leading-[1.2] font-semibold whitespace-nowrap text-black sm:text-[1.75rem] lg:text-[2rem]"
         >
           Heatwave
-        </a>
+        </Link>
 
         <div className="hidden h-14 min-w-0 items-center gap-2 overflow-hidden rounded-[60px] bg-white lg:flex xl:h-[66px] xl:gap-4">
-          {navItems.map((item, index) => (
-            <a
-              key={item}
-              href="#"
-              aria-current={index === 0 ? "page" : undefined}
+          {navItems.map((item) => (
+            <NavLink
+              key={item.label}
+              item={item}
+              activePath={activePath}
               className={[
                 "flex h-full min-w-0 flex-1 items-center justify-center px-2 py-3 text-base leading-normal font-semibold whitespace-nowrap xl:text-lg",
-                index === 0
-                  ? "rounded-[60px] bg-[#3a81f7] text-white"
-                  : "text-[#282828]",
+                isCurrentItem(item, activePath) ? "text-white" : "text-[#282828]",
               ].join(" ")}
-            >
-              {item}
-            </a>
+            />
           ))}
         </div>
 
@@ -51,23 +79,18 @@ export function SiteNav() {
 
             <div className="absolute top-[calc(100%+12px)] right-0 w-[min(18rem,calc(100vw-2rem))] overflow-hidden rounded-[24px] bg-white p-2 shadow-[0_18px_50px_rgba(25,45,85,0.16)]">
               <div className="flex flex-col gap-1">
-                {navItems.map((item, index) => (
-                  <a
-                    key={item}
-                    href="#"
-                    aria-current={index === 0 ? "page" : undefined}
+                {navItems.map((item) => (
+                  <NavLink
+                    key={item.label}
+                    item={item}
+                    activePath={activePath}
                     className={[
-                      "rounded-[18px] px-4 py-3 text-base leading-normal font-semibold",
-                      index === 0
-                        ? "bg-[#3a81f7] text-white"
-                        : "text-[#282828]",
+                      "rounded-[18px] px-4 py-3 text-base leading-normal font-semibold text-[#282828]",
                     ].join(" ")}
-                  >
-                    {item}
-                  </a>
+                  />
                 ))}
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="mt-1 rounded-[18px] bg-[#1d3eb0] px-4 py-3 text-center text-base leading-normal font-semibold text-white"
                 >
                   Contact Us
@@ -77,15 +100,65 @@ export function SiteNav() {
           </details>
         </div>
 
-        <a
-          href="#contact"
-          className="hidden h-14 w-[156px] shrink-0 items-center justify-center rounded-[50px] bg-[#1d3eb0] px-5 text-base leading-normal font-semibold whitespace-nowrap text-white lg:flex xl:h-[66px] xl:w-[218px] xl:text-lg"
+        <PrimaryPillButton
+          href="/contact"
+          className="hidden h-14 w-[156px] shrink-0 px-5 text-base leading-normal font-semibold lg:flex xl:h-[66px] xl:w-[218px] xl:text-lg"
         >
           Contact Us
-        </a>
+        </PrimaryPillButton>
       </nav>
     </header>
   );
+}
+
+function NavLink({
+  item,
+  activePath,
+  className,
+}: Readonly<{
+  item: NavItem;
+  activePath: string;
+  className: string;
+}>) {
+  const active = isCurrentItem(item, activePath);
+
+  if (item.href.startsWith("/")) {
+    return (
+      <Link
+        href={item.href}
+        aria-current={active ? "page" : undefined}
+        className={className}
+      >
+        {active ? (
+          <BadgeChip size="md">
+            {item.label}
+          </BadgeChip>
+        ) : (
+          item.label
+        )}
+      </Link>
+    );
+  }
+
+  return (
+    <a
+      href={item.href}
+      aria-current={active ? "page" : undefined}
+      className={className}
+    >
+      {active ? (
+        <BadgeChip size="md">
+          {item.label}
+        </BadgeChip>
+      ) : (
+        item.label
+      )}
+    </a>
+  );
+}
+
+function isCurrentItem(item: NavItem, activePath: string) {
+  return item.isCurrent?.(activePath) ?? false;
 }
 
 function PhoneIcon() {

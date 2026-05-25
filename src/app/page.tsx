@@ -10,7 +10,7 @@ import { TestimonialSection } from "@/components/testimonial-section";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#eff6ff]">
-      <SiteNav />
+      <SiteNav activePath="/" />
       <HeroSection />
       <MissionSection />
       <SolutionSection />
