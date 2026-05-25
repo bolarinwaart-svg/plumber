@@ -27,28 +27,24 @@ const services = [
 export function HeatingServicesSection() {
   return (
     <section className="site-container pb-6">
-      <div className="rounded-2xl bg-white py-4 lg:rounded-[16px]">
-        <div className="flex flex-col gap-8 lg:gap-12">
-          <div className="flex flex-col gap-5 px-2 lg:px-4">
-            <div className="max-w-[760px]">
-              <h2 className="text-[clamp(2rem,4vw,3rem)] leading-[1.08] font-medium text-black">
-                Expert Heating Services for Your Home or Business
-              </h2>
-            </div>
-            <div className="max-w-[760px]">
-              <p className="text-base leading-[1.5] font-normal text-black lg:text-lg">
-                At Heat Wave Plumbing &amp; Heating, we offer a wide range of
-                heating services to meet all your needs. Whether you need a
-                boiler replacement, underfloor heating installation, or radiator
-                repair, our experienced team has got you covered. We pride
-                ourselves on delivering high-quality workmanship and exceptional
-                customer service. Contact us today to discuss your heating
-                requirements.
-              </p>
-            </div>
+      <div className="rounded-2xl bg-white px-2 py-4 lg:rounded-[32px] lg:px-4 lg:py-[50px]">
+        <div className="flex flex-col gap-8 lg:gap-20">
+          <div className="grid gap-5 lg:grid-cols-2 lg:gap-20">
+            <h2 className="max-w-[34rem] text-[1.75rem] leading-[1.12] font-medium text-black lg:text-[2.5rem] lg:leading-[1.2]">
+              Expert Heating Services for Your Home or Business
+            </h2>
+            <p className="max-w-[40rem] text-sm leading-[1.55] font-normal text-[#282828] lg:text-xl lg:leading-[1.35]">
+              At Heat Wave Plumbing &amp; Heating, we offer a wide range of
+              heating services to meet all your needs. Whether you need a
+              boiler replacement, underfloor heating installation, or radiator
+              repair, our experienced team has got you covered. We pride
+              ourselves on delivering high-quality workmanship and exceptional
+              customer service. Contact us today to discuss your heating
+              requirements.
+            </p>
           </div>
 
-          <div className="grid gap-4 px-2 lg:grid-cols-3 lg:px-4">
+          <div className="grid gap-3 lg:grid-cols-3 lg:gap-4">
             {services.map((service) => (
               <MediaCard
                 key={service.title}
@@ -58,7 +54,6 @@ export function HeatingServicesSection() {
                 imageClassName="object-contain object-center"
                 title={service.title}
                 description={service.description}
-                className="rounded-[8px]"
               />
             ))}
           </div>

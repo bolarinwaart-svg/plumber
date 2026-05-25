@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import { PlumbingCtaSection } from "@/components/plumbing-cta-section";
 import { PlumbingEmergencySection } from "@/components/plumbing-emergency-section";
 import { PlumbingFaqSection } from "@/components/plumbing-faq-section";
 import { PlumbingHeroSection } from "@/components/plumbing-hero-section";
-import { PlumbingIntroSection } from "@/components/plumbing-intro-section";
 import { PlumbingServicesSection } from "@/components/plumbing-services-section";
 import { PlumbingSolutionsSection } from "@/components/plumbing-solutions-section";
 import { SiteFooter } from "@/components/site-footer";
@@ -23,7 +23,7 @@ export default function PlumbingPage() {
       <PlumbingSolutionsSection />
       <TestimonialSection />
       <PlumbingEmergencySection />
-      <PlumbingIntroSection />
+      <PlumbingCtaSection />
       <PlumbingFaqSection />
       <div className="flex-1" />
       <SiteFooter />

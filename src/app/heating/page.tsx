@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { HeatingHeroSection } from "@/components/heating-hero-section";
-import { HeatingBlueSection } from "@/components/heating-blue-section";
 import { HeatingCtaSection } from "@/components/heating-cta-section";
 import { HeatingInstallationSection } from "@/components/heating-installation-section";
 import { HeatingServicesSection } from "@/components/heating-services-section";
+import { HeatingSolutionsSection } from "@/components/heating-solutions-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
 import { PlumbingFaqSection } from "@/components/plumbing-faq-section";
@@ -20,9 +20,9 @@ export default function HeatingPage() {
       <SiteNav activePath="/heating" />
       <HeatingHeroSection />
       <HeatingServicesSection />
-      <HeatingInstallationSection />
+      <HeatingSolutionsSection />
       <TestimonialSection />
-      <HeatingBlueSection />
+      <HeatingInstallationSection />
       <HeatingCtaSection />
       <PlumbingFaqSection />
       <SiteFooter />

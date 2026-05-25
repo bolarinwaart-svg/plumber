@@ -6,21 +6,20 @@ export function HeatingCtaSection() {
     <SectionShell
       as="section"
       tone="white"
-      radius="sm"
-      padding="sm"
+      radius="lg"
+      padding="lg"
       className="pb-6"
-      innerClassName="flex flex-col gap-6 px-0 py-2 sm:px-2 sm:py-4"
+      innerClassName="flex min-h-[220px] flex-col justify-center gap-4 px-0 py-0 sm:gap-5"
     >
-      <div className="max-w-[23rem]">
-        <h2 className="text-[1.5rem] leading-[1.4] font-medium text-black">
+      <div className="max-w-[30rem]">
+        <h2 className="text-[2rem] leading-[1.1] font-medium text-black sm:text-[2.5rem]">
           Expert Heating Services in Leicester
         </h2>
       </div>
 
-      <div className="max-w-[24rem]">
+      <div className="max-w-[32rem]">
         <p className="text-[1.125rem] leading-[1.5] font-normal text-black">
-          Trust our experienced team to provide reliable and efficient
-          heating solutions for your home or business.
+          Contact us today for a free quote or to schedule a service
         </p>
       </div>
 

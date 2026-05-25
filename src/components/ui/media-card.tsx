@@ -82,12 +82,7 @@ export function MediaCard({
           alt={alt}
           fill
           sizes="(min-width: 1280px) 33vw, (min-width: 1024px) 31vw, calc(100vw - 32px)"
-          className={[
-            "object-cover",
-            imageClassName ?? "object-center",
-          ]
-            .filter(Boolean)
-            .join(" ")}
+          className={imageClassName ?? "object-cover object-center"}
         />
 
         {badge ? <div className="absolute left-2 top-4 z-10">{badge}</div> : null}

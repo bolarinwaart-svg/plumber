@@ -43,8 +43,9 @@ export function SectionShell({
   ...rest
 }: Readonly<SectionShellProps>) {
   const Component = as ?? "div";
+  const outerClasses = ["site-container", className].filter(Boolean).join(" ");
   const shellClasses = [
-    "site-container overflow-hidden",
+    "overflow-hidden",
     toneClasses[tone],
     radiusClasses[radius],
     paddingClasses[padding],
@@ -53,7 +54,7 @@ export function SectionShell({
     .join(" ");
 
   return (
-    <Component className={className} {...rest}>
+    <Component className={outerClasses} {...rest}>
       <div className={shellClasses}>
         <div className={innerClassName}>{children}</div>
       </div>
