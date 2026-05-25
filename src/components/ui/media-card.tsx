@@ -28,12 +28,12 @@ const variantStyles: Record<
   }
 > = {
   service: {
-    article: "overflow-hidden rounded-lg bg-[#eff6ff] lg:rounded-[32px]",
+    article: "overflow-hidden rounded-lg bg-[#eff6ff] lg:rounded-[24px]",
     media: "relative h-[162px] overflow-hidden bg-[#bfdbfe] lg:h-[280px]",
     content:
-      "flex min-h-[8.625rem] flex-col items-center justify-center bg-[#1d3eb0] px-3 py-4 text-white lg:min-h-[10rem] lg:bg-[#1d5dec] lg:px-4 lg:py-4",
+      "flex flex-col items-start bg-[#1d3eb0] px-3 py-3 text-white lg:bg-[#1d5dec] lg:p-4",
     title:
-      "text-center text-xl leading-[1.25] font-medium text-white lg:text-[2rem] lg:leading-[1.2] lg:text-[#f6f6f6]",
+      "w-full text-center text-xl leading-[1.4] font-semibold text-white lg:text-[1.5rem] lg:text-[#f6f6f6]",
     description:
       "mt-2 text-center text-sm leading-[1.5] font-normal text-white/95 lg:text-base",
     footer: "mt-4",
