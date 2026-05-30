@@ -41,7 +41,10 @@ export async function ServicesSection() {
                 title={
                   <>
                     {(service.titleLines ?? [service.title]).map((line, index, lines) => (
-                      <span key={`${line}-${index}`}>
+                      <span
+                        key={`${line}-${index}`}
+                        className="min-[1000px]:whitespace-nowrap"
+                      >
                         {line}
                         {index < lines.length - 1 ? <br /> : null}
                       </span>
