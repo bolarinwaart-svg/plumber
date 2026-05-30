@@ -46,6 +46,7 @@ rounded:
   md: "24px"
   lg: "30px"
 spacing:
+  pageMaxWidth: "1512px"
   gutter: "clamp(1rem, 4vw, 2rem)"
   sm: "8px"
   md: "16px"
@@ -193,6 +194,10 @@ The component feel is **soft and confident**: generous rounded corners, solid bl
 - **Style:** A white pill bar floating on the Sky Wash header. Links are General-Sans semibold.
 - **States:** Default Ink; hover fills the link with Sky Wash; the active route is a solid Active Azure pill with white text.
 - **Mobile:** Logo plus two round controls (a Deep Royal Blue call button, a white menu trigger). The menu opens as a floating white overlay, the system's one sanctioned shadow.
+
+### Page Frame
+- **Max width:** 1512px, including page gutters. This is the shared frame for primary page sections, the navigation, and the footer.
+- **Alignment:** The frame is centered in the viewport with responsive side gutters. Sections should not exceed this shared width unless a page intentionally introduces a full-bleed media treatment.
 
 ## 6. Do's and Don'ts
 
