@@ -2,6 +2,10 @@ import { BadgeChip } from "@/components/ui/badge-chip";
 import { MediaCard } from "@/components/ui/media-card";
 import { getServicesByCategory } from "@/lib/cms";
 
+function keepWordsTogether(line: string) {
+  return line.replaceAll(" ", "\u00a0");
+}
+
 export async function ServicesSection() {
   const services = await getServicesByCategory("home");
 
@@ -43,9 +47,9 @@ export async function ServicesSection() {
                     {(service.titleLines ?? [service.title]).map((line, index, lines) => (
                       <span
                         key={`${line}-${index}`}
-                        className="min-[1000px]:whitespace-nowrap"
+                        className="inline-block whitespace-nowrap"
                       >
-                        {line}
+                        {keepWordsTogether(line)}
                         {index < lines.length - 1 ? <br /> : null}
                       </span>
                     ))}
