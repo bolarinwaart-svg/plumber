@@ -15,9 +15,9 @@ type SectionShellProps = {
 } & Omit<HTMLAttributes<HTMLElement>, "children" | "className">;
 
 const toneClasses: Record<SectionShellTone, string> = {
-  white: "bg-white text-[#282828]",
-  blue: "bg-[#1d3eb0] text-[#eff6ff]",
-  lightBlue: "bg-[#eff6ff] text-[#282828]",
+  white: "bg-white text-ink",
+  blue: "bg-brand text-sky",
+  lightBlue: "bg-sky text-ink",
 };
 
 const radiusClasses: Record<SectionShellRadius, string> = {
@@ -27,7 +27,7 @@ const radiusClasses: Record<SectionShellRadius, string> = {
 };
 
 const paddingClasses: Record<SectionShellPadding, string> = {
-  sm: "p-2",
+  sm: "p-2 min-[1000px]:p-4",
   md: "px-4 py-4",
   lg: "px-4 py-8 sm:px-5 sm:py-10",
 };

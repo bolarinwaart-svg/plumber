@@ -9,27 +9,33 @@ export function HeroSection() {
       as="section"
       tone="lightBlue"
       mediaPosition="right"
+      mediaFirstOnMobile
+      twoColumnAt="1000px"
       align="start"
-      className="pb-6 pt-1 sm:pt-2 xl:pb-10 xl:pt-0"
-      innerClassName="xl:min-h-[28.625rem] xl:grid-cols-[minmax(0,1.03fr)_minmax(0,0.97fr)] xl:items-stretch"
-      textClassName="rounded-2xl bg-white px-4 py-6 sm:p-8 md:p-10 xl:rounded-[30px] xl:px-4 xl:py-14"
-      mediaClassName="relative h-[13.75rem] overflow-hidden rounded-2xl sm:h-[18rem] md:h-[24rem] lg:h-[28rem] xl:h-auto xl:rounded-[30px]"
+      className="pb-6 pt-1 sm:pt-2 min-[1000px]:pb-10 min-[1000px]:pt-0"
+      innerClassName="min-[1000px]:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] min-[1000px]:items-stretch"
+      textClassName="rounded-2xl bg-white px-4 py-6 sm:p-8 md:max-[999px]:gap-8 md:max-[999px]:px-4 md:max-[999px]:pb-14 md:max-[999px]:pt-14 min-[1000px]:gap-6 min-[1000px]:rounded-[30px] min-[1000px]:px-4 min-[1000px]:py-14"
+      mediaClassName="relative h-[13.75rem] overflow-hidden rounded-2xl sm:h-[18rem] md:h-[24rem] min-[1000px]:h-auto min-[1000px]:rounded-[30px]"
       title={
-        <h1 className="max-w-[14ch] text-[clamp(2.125rem,5.6vw,4.25rem)] leading-[1.1] font-semibold text-[#282828] sm:max-w-[16ch] md:max-w-[18ch] lg:max-w-[20ch] xl:max-w-[760px]">
-          Welcome to Heat Wave Plumbing &amp; Heating
+        <h1 className="text-[clamp(2.125rem,4.4vw,4.75rem)] leading-[1.1] font-semibold text-ink md:max-[999px]:text-[3.5rem] md:max-[999px]:leading-[1.08] min-[1000px]:max-w-none min-[1000px]:text-[clamp(2.25rem,3.5vw,3.5rem)] min-[1000px]:leading-[1.2]">
+          Welcome to Heat Wave
+          <br className="hidden min-[1000px]:block" />
+          <span className="min-[1000px]:hidden"> </span>
+          Plumbing &amp; Heating
         </h1>
       }
       description={
-        <p className="max-w-[58ch] text-[clamp(1.125rem,1.6vw,1.875rem)] leading-[1.45] font-normal text-[#3d3d3d] xl:max-w-[760px]">
+        <p className="max-w-[62ch] text-[clamp(0.875rem,1.4vw,1.25rem)] leading-[1.5] font-normal text-ink-soft md:max-[999px]:max-w-[44rem] md:max-[999px]:text-[1.25rem] min-[1000px]:max-w-none">
           We are a trusted plumbing and heating company in Leicester,
-          <br className="hidden xl:block" />
+          <br className="hidden min-[1000px]:block" />
+          <span className="min-[1000px]:hidden"> </span>
           offering a wide range of services to meet all your needs.
         </p>
       }
       cta={
         <PrimaryPillButton
           href="#contact"
-          className="text-[clamp(1rem,1.1vw,1.125rem)]"
+          className="text-[clamp(1rem,1.1vw,1.125rem)] md:max-lg:text-[1.125rem] lg:mt-5"
         >
           Contact us
         </PrimaryPillButton>
@@ -40,8 +46,8 @@ export function HeroSection() {
           alt="Plumber repairing pipework under a sink"
           fill
           priority
-          sizes="(min-width: 1280px) 50vw, calc(100vw - 32px)"
-          className="object-cover object-[52%_50%] xl:object-[50%_50%]"
+          sizes="(min-width: 1000px) 50vw, calc(100vw - 32px)"
+          className="object-cover object-[52%_50%]"
         />
       }
     />

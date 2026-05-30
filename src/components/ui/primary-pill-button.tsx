@@ -1,10 +1,11 @@
-import Link from "next/link";
 import type {
   AnchorHTMLAttributes,
   ButtonHTMLAttributes,
   MouseEventHandler,
   ReactNode,
 } from "react";
+
+import Link from "next/link";
 
 type PrimaryPillButtonCommonProps = {
   variant?: "primary" | "outlined";
@@ -29,8 +30,10 @@ type PrimaryPillButtonProps =
   | PrimaryPillButtonLinkProps;
 
 const variantClasses = {
-  primary: "border border-transparent bg-[#1d3eb0] text-white",
-  outlined: "border border-[#eff6ff] bg-transparent text-[#eff6ff]",
+  primary:
+    "border border-transparent bg-brand text-white hover:bg-brand-bright active:bg-brand",
+  outlined:
+    "border border-sky bg-transparent text-sky hover:bg-white/10 active:bg-white/5",
 } as const;
 
 const sizeClasses = {
@@ -40,7 +43,7 @@ const sizeClasses = {
 } as const;
 
 const baseClasses =
-  "inline-flex items-center justify-center rounded-[30px] font-semibold leading-[1.5] whitespace-nowrap transition-colors";
+  "inline-flex items-center justify-center rounded-[30px] font-semibold leading-[1.5] whitespace-nowrap transition-colors duration-200 ease-out";
 
 export function PrimaryPillButton({
   variant = "primary",

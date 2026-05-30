@@ -2,15 +2,12 @@ import Image from "next/image";
 
 import { SectionShell } from "@/components/ui/section-shell";
 import { TestimonialBlock } from "@/components/ui/testimonial-block";
+import { getFeaturedTestimonial, getTestimonialAvatars } from "@/lib/cms";
 
-const testimonialAvatars = [
-  { src: "/testimonial-avatar-1-fresh.png", alt: "Client story avatar 1" },
-  { src: "/testimonial-avatar-2-fresh.png", alt: "Client story avatar 2" },
-  { src: "/testimonial-avatar-3-fresh.png", alt: "Client story avatar 3" },
-  { src: "/testimonial-avatar-4-fresh.png", alt: "Client story avatar 4" },
-];
+export async function TestimonialSection() {
+  const testimonial = await getFeaturedTestimonial();
+  const testimonialAvatars = await getTestimonialAvatars();
 
-export function TestimonialSection() {
   return (
     <SectionShell
       as="section"
@@ -20,14 +17,14 @@ export function TestimonialSection() {
       className="pb-6"
       innerClassName="flex flex-col gap-8"
     >
-      <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between lg:gap-[153px]">
+      <div className="flex flex-col gap-6 min-[744px]:max-[1023px]:flex-row min-[744px]:max-[1023px]:items-start min-[744px]:max-[1023px]:justify-between lg:flex-row lg:items-start lg:justify-between lg:gap-[153px]">
         <div className="min-w-0 flex-1 overflow-hidden">
           <h2 className="text-[2rem] leading-[1.3] font-medium text-black">
             Client Stories
           </h2>
         </div>
 
-        <div className="flex w-full items-center justify-start lg:w-auto lg:justify-end">
+        <div className="flex w-full items-center justify-start min-[744px]:max-[1023px]:w-auto min-[744px]:max-[1023px]:justify-end lg:w-auto lg:justify-end">
           <div className="flex gap-4">
             {testimonialAvatars.map((avatar) => (
               <div
@@ -48,19 +45,24 @@ export function TestimonialSection() {
       </div>
 
       <TestimonialBlock
-        image="/testimonial-client-portrait.png"
-        alt="John Doe testimonial portrait"
-        rating={5}
+        image={testimonial.image}
+        alt={testimonial.alt}
+        rating={testimonial.rating}
         quote={
           <>
-            I had a great experience with Heat Wave Plumbing &amp; Heating.
-            <br aria-hidden="true" />
-            They were prompt, professional, and fixed my plumbing issue
-            quickly. Highly recommended!
+            {testimonial.quoteLines.map((line, index) => (
+              <span key={line}>
+                {index > 0 ? " " : null}
+                {line}
+                {index < testimonial.quoteLines.length - 1 ? (
+                  <br aria-hidden="true" className="hidden min-[744px]:block" />
+                ) : null}
+              </span>
+            ))}
           </>
         }
-        name="John Doe"
-        title="CEO, ABC Company"
+        name={testimonial.name}
+        title={testimonial.title}
         layout="horizontal"
       />
     </SectionShell>

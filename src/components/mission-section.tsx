@@ -10,14 +10,14 @@ const avatars = [
 export function MissionSection() {
   return (
     <section className="site-container pb-6">
-      <div className="rounded-2xl bg-[#eff6ff] p-2 xl:rounded-[30px] xl:p-4">
-        <div className="grid gap-4 md:gap-5 xl:grid-cols-[minmax(0,27rem)_minmax(0,1fr)] xl:items-stretch">
-          <div className="flex rounded-2xl bg-[#1d3eb0] px-4 sm:px-6 xl:rounded-[30px] xl:bg-[#1d5dec] xl:px-4">
-            <div className="flex w-full flex-col items-start justify-end gap-4 py-8 sm:py-10 xl:justify-center">
-              <h2 className="text-[clamp(3rem,10vw,4.5rem)] leading-[1.1] font-medium text-white">
+      <div className="rounded-2xl bg-sky p-2 lg:rounded-[30px] lg:p-4">
+        <div className="grid gap-4 md:grid-cols-2 md:items-stretch lg:grid-cols-[minmax(0,449px)_minmax(0,1fr)]">
+          <div className="flex rounded-2xl bg-brand px-2 md:px-4 md:rounded-3xl lg:rounded-[30px] lg:bg-brand-bright">
+            <div className="flex w-full flex-col items-start justify-end gap-4 py-[30px] lg:justify-center">
+              <h2 className="text-[3rem] leading-[1.2] font-medium text-white">
                 30k +
               </h2>
-              <p className="max-w-[34ch] text-base leading-[1.5] font-normal text-white sm:max-w-[42ch] sm:text-lg">
+              <p className="text-lg leading-[1.5] font-normal text-white">
                 Our commitment to delivering top-notch service has earned us a
                 loyal clientele and countless positive reviews.
               </p>
@@ -43,13 +43,13 @@ export function MissionSection() {
             </div>
           </div>
 
-          <div className="flex rounded-2xl bg-white px-4 sm:px-6 xl:min-h-[12.8125rem] xl:rounded-[30px] xl:px-4">
-            <div className="flex min-w-0 flex-1 flex-col items-start justify-center py-6 sm:py-8 md:py-10 xl:px-[2.8125rem] xl:py-8">
-              <div className="flex w-full flex-col gap-4 md:gap-5">
-                <h2 className="text-[clamp(2.5rem,8vw,4rem)] leading-[1.15] font-medium text-[#282828] xl:text-black">
+          <div className="flex rounded-2xl bg-white px-2 md:px-4 md:rounded-3xl lg:min-h-[12.8125rem] lg:rounded-[30px]">
+            <div className="flex min-w-0 flex-1 flex-col items-start py-4 md:py-8 lg:justify-center lg:px-[2.8125rem]">
+              <div className="flex w-full flex-col gap-4">
+                <h2 className="text-[2.25rem] leading-[1.2] font-medium text-ink md:text-[3rem] lg:text-black">
                   Our mission
                 </h2>
-                <p className="max-w-[60ch] text-base leading-[1.5] font-normal text-[#3d3d3d] sm:text-lg">
+                <p className="text-base leading-[1.5] font-normal text-ink-soft md:text-lg">
                   At Heat Wave Plumbing &amp; Heating, we are dedicated to
                   providing top-notch leak repair services. Our experienced team
                   of plumbers is equipped with the skills and knowledge to

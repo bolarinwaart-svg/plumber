@@ -10,12 +10,12 @@ type BadgeChipProps = {
 
 const toneClasses = {
   blue: {
-    filled: "bg-[#3a81f7] text-white",
-    outlined: "border border-[#3a81f7] text-[#1d3eb0]",
+    filled: "bg-brand-accent text-white",
+    outlined: "border border-brand-accent text-brand",
   },
   white: {
-    filled: "bg-white text-[#1d3eb0]",
-    outlined: "border border-[#eff6ff] text-[#eff6ff]",
+    filled: "bg-white text-brand",
+    outlined: "border border-sky text-sky",
   },
 } as const;
 

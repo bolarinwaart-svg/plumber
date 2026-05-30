@@ -28,34 +28,36 @@ const variantStyles: Record<
   }
 > = {
   service: {
-    article: "overflow-hidden rounded-lg bg-[#eff6ff] lg:rounded-[24px]",
-    media: "relative h-[162px] overflow-hidden bg-[#bfdbfe] lg:h-[280px]",
+    article:
+      "flex flex-col overflow-hidden rounded-lg bg-sky min-[1000px]:rounded-[24px]",
+    media:
+      "relative h-[162px] overflow-hidden bg-sky-200 min-[1000px]:h-auto min-[1000px]:min-h-[280px] min-[1000px]:flex-1",
     content:
-      "flex flex-col items-start bg-[#1d3eb0] px-3 py-3 text-white lg:bg-[#1d5dec] lg:p-4",
+      "flex shrink-0 flex-col items-start bg-brand px-3 py-3 text-white min-[1000px]:bg-brand-bright min-[1000px]:p-4",
     title:
-      "w-full text-center text-xl leading-[1.4] font-semibold text-white lg:text-[1.5rem] lg:text-[#f6f6f6]",
+      "w-full text-center text-xl leading-[1.4] font-semibold text-white min-[1000px]:text-[clamp(1rem,1.4vw,1.5rem)] min-[1000px]:leading-[1.35]",
     description:
-      "mt-2 text-center text-sm leading-[1.5] font-normal text-white/95 lg:text-base",
+      "mt-2 text-center text-sm leading-[1.5] font-normal text-white/95 min-[1000px]:text-base",
     footer: "mt-4",
   },
   feature: {
-    article: "overflow-hidden rounded-lg bg-[#eff6ff] lg:rounded-[24px]",
-    media: "relative h-[162px] overflow-hidden bg-[#bfdbfe] lg:h-[280px]",
-    content: "bg-[#eff6ff] px-3 py-4 lg:px-4",
+    article: "overflow-hidden rounded-lg bg-sky lg:rounded-[24px]",
+    media: "relative h-[162px] overflow-hidden bg-sky-200 lg:h-[280px]",
+    content: "bg-sky px-3 py-4 lg:px-4",
     title:
-      "text-lg leading-[1.25] font-semibold text-black lg:text-xl lg:leading-[1.35]",
+      "text-lg leading-[1.25] font-semibold text-ink lg:text-xl lg:leading-[1.35]",
     description:
-      "mt-4 text-sm leading-[1.5] font-normal text-black lg:text-lg lg:leading-[1.5]",
+      "mt-4 text-sm leading-[1.5] font-normal text-ink lg:text-lg lg:leading-[1.5]",
     footer: "mt-4",
   },
   blog: {
     article: "flex min-w-0 h-full flex-col overflow-hidden rounded-[24px] bg-white",
     media:
-      "relative h-[220px] overflow-hidden rounded-[24px] bg-[#bfdbfe] sm:h-[280px] xl:h-[500px]",
+      "relative h-[220px] overflow-hidden rounded-[24px] bg-sky-200 sm:h-[280px] lg:h-[500px]",
     content:
-      "flex flex-1 flex-col gap-4 px-4 py-5 sm:px-5 sm:py-6 xl:h-[297px] xl:gap-6 xl:px-4 xl:py-6",
-    title: "text-xl font-semibold text-[#282828]",
-    description: "text-lg font-normal text-[#3d3d3d]",
+      "flex flex-1 flex-col gap-4 px-4 py-5 sm:px-5 sm:py-6 lg:h-[297px] lg:gap-6 lg:px-4 lg:py-6",
+    title: "text-xl font-semibold text-ink",
+    description: "text-lg font-normal text-ink-soft",
     footer: "mt-auto",
   },
 };
@@ -81,7 +83,7 @@ export function MediaCard({
           src={image}
           alt={alt}
           fill
-          sizes="(min-width: 1280px) 33vw, (min-width: 1024px) 31vw, calc(100vw - 32px)"
+          sizes="(min-width: 1024px) 33vw, calc(100vw - 32px)"
           className={imageClassName ?? "object-cover object-center"}
         />
 
@@ -89,7 +91,7 @@ export function MediaCard({
       </div>
 
       <div className={[styles.content, contentClassName ?? ""].filter(Boolean).join(" ")}>
-        <div>
+        <div className="w-full">
           <h3 className={styles.title}>{title}</h3>
           {description ? <div className={styles.description}>{description}</div> : null}
         </div>

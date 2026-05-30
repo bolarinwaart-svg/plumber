@@ -11,20 +11,20 @@ export function ContactHeroSection() {
           alt="Plumber standing in a bathroom"
           fill
           priority
-          sizes="(min-width: 1440px) 1440px, calc(100vw - 32px)"
+          sizes="(min-width: 1024px) 1440px, calc(100vw - 32px)"
           className="object-cover object-[52%_50%]"
         />
 
         <div className="absolute inset-0 bg-[linear-gradient(90deg,#1d5dec_2.824%,rgba(29,62,176,0)_65.784%)]" />
 
         <div className="relative z-10 flex h-full items-end px-4 pb-8 text-white sm:px-8">
-          <div className="flex flex-col gap-4 max-w-[42rem]">
+          <div className="flex w-full min-w-0 max-w-[42rem] flex-col gap-4">
             <h1 className="text-[2rem] leading-[1.2] font-medium sm:text-[3rem]">
-              Get in Touch
+              Request a visit
             </h1>
-            <p className="text-lg leading-[1.5] font-normal">
-              We would love to hear from you. Contact us for any inquiries or
-              to schedule an appointment.
+            <p className="max-w-[17rem] text-lg leading-[1.5] font-normal sm:max-w-[32rem]">
+              Tell us what needs fixing, replacing, or installing in Leicester.
+              We will help you arrange the next step.
             </p>
           </div>
         </div>

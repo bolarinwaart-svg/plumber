@@ -8,28 +8,26 @@ export function ContactInfoStrip() {
     <section className="site-container pb-6">
       <div className="flex flex-col gap-8 rounded-[30px] bg-white p-4">
         <div className="grid gap-6 sm:grid-cols-2 lg:flex lg:gap-20">
-          <div className="flex flex-col gap-2 lg:flex-1">
+          <div className="flex min-w-0 flex-col gap-2 lg:flex-1">
             <h2 className="text-[1.25rem] leading-[1.4] font-semibold text-black">
               Email
             </h2>
             <a
-              href="mailto:hello@relume.io"
-              className="text-[1rem] leading-[1.5] font-normal underline text-black"
+              href="mailto:contact@heatwaveplumbing.co.uk"
+              className="break-all text-[1rem] leading-[1.5] font-normal underline text-black sm:break-normal"
             >
-              hello@relume.io
+              contact@heatwaveplumbing.co.uk
             </a>
           </div>
 
-          <div className="flex flex-col gap-2 lg:flex-1">
+          <div className="flex min-w-0 flex-col gap-2 lg:flex-1">
             <h2 className="text-[1.25rem] leading-[1.4] font-semibold text-black">
-              Phone
+              Call-back requests
             </h2>
-            <a
-              href="tel:+15550000000"
-              className="text-[1rem] leading-[1.5] font-normal underline text-black"
-            >
-              +1 (555) 000-0000
-            </a>
+            <p className="max-w-[17rem] text-[1rem] leading-[1.5] font-normal text-black sm:max-w-none">
+              Send your number with the job details. We will arrange a time to
+              call.
+            </p>
           </div>
         </div>
 
@@ -38,7 +36,7 @@ export function ContactInfoStrip() {
             src={contactImagePrimary}
             alt="Plumber standing in a bathroom"
             fill
-            sizes="(min-width: 1280px) 100vw, calc(100vw - 32px)"
+            sizes="(min-width: 1024px) 100vw, calc(100vw - 32px)"
             className="object-cover object-[50%_45%]"
           />
         </div>

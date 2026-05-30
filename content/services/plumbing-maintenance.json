@@ -1,0 +1,10 @@
+{
+  "slug": "plumbing-maintenance",
+  "category": "plumbing",
+  "title": "Reliable Plumbing Maintenance Services",
+  "description": "Regular maintenance is key to preventing plumbing issues. Our maintenance services will keep your plumbing system in top condition, saving you time and money in the long run.",
+  "image": "/service-maintenance.png",
+  "alt": "Open plumber toolkit",
+  "imageClassName": "object-cover object-[72%_50%]",
+  "order": 3
+}

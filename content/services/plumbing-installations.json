@@ -1,0 +1,10 @@
+{
+  "slug": "plumbing-installations",
+  "category": "plumbing",
+  "title": "Professional Installations",
+  "description": "Whether you need a new faucet, toilet, or shower installed, our team has the expertise to handle any plumbing installation with precision and care.",
+  "image": "/service-installation.png",
+  "alt": "Copper and white pipe connector",
+  "imageClassName": "object-cover object-center",
+  "order": 2
+}

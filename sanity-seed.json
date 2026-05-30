@@ -1,0 +1,333 @@
+[
+  {
+    "_id": "siteSettings.main",
+    "_type": "siteSettings",
+    "brandName": "Heatwave",
+    "companyName": "Heat Wave Plumbing & Heating",
+    "metadata": {
+      "title": "Heatwave Plumbing & Heating",
+      "description": "Plumbing and heating services in Leicester."
+    },
+    "contact": {
+      "email": "contact@heatwaveplumbing.co.uk",
+      "label": "Leicester plumbing and heating enquiries"
+    },
+    "navItems": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "Plumbing",
+        "href": "/plumbing"
+      },
+      {
+        "label": "Heating",
+        "href": "/heating"
+      },
+      {
+        "label": "Blog",
+        "href": "/blog"
+      }
+    ],
+    "footer": {
+      "headline": "HEATWAVE",
+      "enquiryCopy": "Planning a plumbing or heating job in Leicester? Send the details and we will help you arrange the next step.",
+      "privacyCopy": "By sending your details you agree to our Privacy Policy and consent to being contacted about your enquiry.",
+      "legalLinks": [
+        "Privacy Policy",
+        "Terms of Service",
+        "Cookies Settings"
+      ],
+      "socialLinks": [
+        "Facebook",
+        "Instagram",
+        "Twitter",
+        "LinkedIn"
+      ]
+    }
+  },
+  {
+    "_id": "blogPost.top-plumbing-tips",
+    "_type": "blogPost",
+    "slug": {
+      "_type": "slug",
+      "current": "top-plumbing-tips"
+    },
+    "title": "Top Plumbing Tips for Homeowners",
+    "excerpt": "Small habits that keep your pipes healthy and help you spot trouble before it becomes a callout.",
+    "category": "Plumbing",
+    "readTime": "5 min read",
+    "alt": "Plumber repairing pipes under a sink",
+    "featured": true,
+    "order": 1,
+    "imagePath": "/blog-plumbing-1.jpg"
+  },
+  {
+    "_id": "blogPost.replace-your-boiler",
+    "_type": "blogPost",
+    "slug": {
+      "_type": "slug",
+      "current": "replace-your-boiler"
+    },
+    "title": "Is It Time to Replace Your Boiler?",
+    "excerpt": "The warning signs worth watching for, and how a timely upgrade can cut your heating bills.",
+    "category": "Heating",
+    "readTime": "4 min read",
+    "alt": "Heating technician working with tools",
+    "featured": true,
+    "order": 2,
+    "imagePath": "/blog-heating.jpg"
+  },
+  {
+    "_id": "blogPost.plumbing-emergency-first-steps",
+    "_type": "blogPost",
+    "slug": {
+      "_type": "slug",
+      "current": "plumbing-emergency-first-steps"
+    },
+    "title": "What to Do First in a Plumbing Emergency",
+    "excerpt": "A calm, step-by-step guide to limiting water damage in the minutes before help arrives.",
+    "category": "Plumbing",
+    "readTime": "6 min read",
+    "alt": "Plumber preparing pipe fittings",
+    "featured": true,
+    "order": 3,
+    "imagePath": "/blog-plumbing-2.jpg"
+  },
+  {
+    "_id": "blogPost.smooth-running-household",
+    "_type": "blogPost",
+    "slug": {
+      "_type": "slug",
+      "current": "smooth-running-household"
+    },
+    "title": "Top Plumbing Tips for Homeowners",
+    "excerpt": "Maintaining a smooth-running household involves more than just decor and design",
+    "category": "Plumbing",
+    "readTime": "5 min read",
+    "alt": "Plumber repairing pipework",
+    "featured": false,
+    "order": 4,
+    "imagePath": "https://www.figma.com/api/mcp/asset/d7527e98-7779-4a51-9436-3f8561c87307"
+  },
+  {
+    "_id": "blogPost.boiler-checklist",
+    "_type": "blogPost",
+    "slug": {
+      "_type": "slug",
+      "current": "boiler-checklist"
+    },
+    "title": "Boiler Replacement Checklist",
+    "excerpt": "Maintaining a smooth-running household involves more than just decor and design",
+    "category": "Heating",
+    "readTime": "1 min read",
+    "alt": "Heating engineer working near a boiler",
+    "featured": false,
+    "order": 5,
+    "imagePath": "https://www.figma.com/api/mcp/asset/f120fa89-cd6f-4f2a-9604-605d7c40c825"
+  },
+  {
+    "_id": "blogPost.emergency-prep",
+    "_type": "blogPost",
+    "slug": {
+      "_type": "slug",
+      "current": "emergency-prep"
+    },
+    "title": "Emergency Plumbing Preparation",
+    "excerpt": "Maintaining a smooth-running household involves more than just decor and design",
+    "category": "Plumbing",
+    "readTime": "5 min read",
+    "alt": "Plumber inspecting pipe fittings",
+    "featured": false,
+    "order": 6,
+    "imagePath": "https://www.figma.com/api/mcp/asset/316dede6-f6b5-4480-8ae8-65af0426e105"
+  },
+  {
+    "_id": "service.heating-boiler-replacement",
+    "_type": "service",
+    "slug": {
+      "_type": "slug",
+      "current": "heating-boiler-replacement"
+    },
+    "category": "heating",
+    "title": "Boiler Replacement and Installation",
+    "description": "Upgrade your old and inefficient boiler with our professional replacement and installation services.",
+    "alt": "Boiler replacement equipment",
+    "order": 1,
+    "imagePath": "/heating-boiler.png"
+  },
+  {
+    "_id": "service.home-installation-maintenance",
+    "_type": "service",
+    "slug": {
+      "_type": "slug",
+      "current": "home-installation-maintenance"
+    },
+    "category": "home",
+    "title": "Installation and Maintenance Services",
+    "titleLines": [
+      "Installation and Maintenance",
+      "Services"
+    ],
+    "alt": "Copper pipe installation detail",
+    "imageClassName": "object-cover object-center",
+    "order": 1,
+    "imagePath": "/service-installation.png"
+  },
+  {
+    "_id": "service.plumbing-leak-repairs",
+    "_type": "service",
+    "slug": {
+      "_type": "slug",
+      "current": "plumbing-leak-repairs"
+    },
+    "category": "plumbing",
+    "title": "Leak Repairs Done Right",
+    "description": "Don't let a leak cause further damage. Our expert plumbers will quickly identify and fix any leaks in your plumbing system, ensuring that your home remains dry and safe.",
+    "alt": "Leaking copper pipe",
+    "imageClassName": "object-cover object-[42%_56%]",
+    "order": 1,
+    "imagePath": "/service-emergency.png"
+  },
+  {
+    "_id": "service.heating-underfloor",
+    "_type": "service",
+    "slug": {
+      "_type": "slug",
+      "current": "heating-underfloor"
+    },
+    "category": "heating",
+    "title": "Underfloor Heating Solutions",
+    "description": "Experience the comfort and energy efficiency of underfloor heating in your home or office.",
+    "alt": "Underfloor heating roll",
+    "order": 2,
+    "imagePath": "/heating-underfloor.png"
+  },
+  {
+    "_id": "service.home-emergency-plumbing",
+    "_type": "service",
+    "slug": {
+      "_type": "slug",
+      "current": "home-emergency-plumbing"
+    },
+    "category": "home",
+    "title": "Emergency Plumbing Solutions",
+    "titleLines": [
+      "Emergency Plumbing",
+      "Solutions"
+    ],
+    "alt": "Burst copper pipe leaking water",
+    "imageClassName": "object-cover object-center",
+    "order": 2,
+    "imagePath": "/service-emergency.png"
+  },
+  {
+    "_id": "service.plumbing-installations",
+    "_type": "service",
+    "slug": {
+      "_type": "slug",
+      "current": "plumbing-installations"
+    },
+    "category": "plumbing",
+    "title": "Professional Installations",
+    "description": "Whether you need a new faucet, toilet, or shower installed, our team has the expertise to handle any plumbing installation with precision and care.",
+    "alt": "Copper and white pipe connector",
+    "imageClassName": "object-cover object-center",
+    "order": 2,
+    "imagePath": "/service-installation.png"
+  },
+  {
+    "_id": "service.heating-radiator",
+    "_type": "service",
+    "slug": {
+      "_type": "slug",
+      "current": "heating-radiator"
+    },
+    "category": "heating",
+    "title": "Radiator Installation and Repair",
+    "description": "Get professional radiator installation and repair services to keep your space warm and cozy.",
+    "alt": "Radiator installation equipment",
+    "order": 3,
+    "imagePath": "/heating-radiator.png"
+  },
+  {
+    "_id": "service.home-water-heater",
+    "_type": "service",
+    "slug": {
+      "_type": "slug",
+      "current": "home-water-heater"
+    },
+    "category": "home",
+    "title": "Efficient Water Heater Installations",
+    "titleLines": [
+      "Efficient Water Heater",
+      "Installations"
+    ],
+    "alt": "Wall mounted water heater system",
+    "imageClassName": "object-cover object-top",
+    "order": 3,
+    "imagePath": "/service-water-heater.png"
+  },
+  {
+    "_id": "service.plumbing-maintenance",
+    "_type": "service",
+    "slug": {
+      "_type": "slug",
+      "current": "plumbing-maintenance"
+    },
+    "category": "plumbing",
+    "title": "Reliable Plumbing Maintenance Services",
+    "description": "Regular maintenance is key to preventing plumbing issues. Our maintenance services will keep your plumbing system in top condition, saving you time and money in the long run.",
+    "alt": "Open plumber toolkit",
+    "imageClassName": "object-cover object-[72%_50%]",
+    "order": 3,
+    "imagePath": "/service-maintenance.png"
+  },
+  {
+    "_id": "testimonial.john-doe",
+    "_type": "testimonial",
+    "slug": {
+      "_type": "slug",
+      "current": "john-doe"
+    },
+    "name": "John Doe",
+    "title": "CEO, ABC Company",
+    "rating": 5,
+    "alt": "John Doe testimonial portrait",
+    "quoteLines": [
+      "I had a great experience with Heat Wave Plumbing & Heating.",
+      "They were prompt, professional, and fixed my plumbing issue quickly.",
+      "Highly recommended!"
+    ],
+    "featured": true,
+    "order": 1,
+    "imagePath": "/testimonial-client-portrait.png"
+  },
+  {
+    "_id": "testimonialAvatarStrip.main",
+    "_type": "testimonialAvatarStrip",
+    "avatars": [
+      {
+        "_key": "testimonialavatar1freshpng",
+        "alt": "Client story avatar 1",
+        "imagePath": "/testimonial-avatar-1-fresh.png"
+      },
+      {
+        "_key": "testimonialavatar2freshpng",
+        "alt": "Client story avatar 2",
+        "imagePath": "/testimonial-avatar-2-fresh.png"
+      },
+      {
+        "_key": "testimonialavatar3freshpng",
+        "alt": "Client story avatar 3",
+        "imagePath": "/testimonial-avatar-3-fresh.png"
+      },
+      {
+        "_key": "testimonialavatar4freshpng",
+        "alt": "Client story avatar 4",
+        "imagePath": "/testimonial-avatar-4-fresh.png"
+      }
+    ]
+  }
+]

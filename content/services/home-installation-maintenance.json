@@ -1,0 +1,10 @@
+{
+  "slug": "home-installation-maintenance",
+  "category": "home",
+  "title": "Installation and Maintenance Services",
+  "titleLines": ["Installation and Maintenance", "Services"],
+  "image": "/service-installation.png",
+  "alt": "Copper pipe installation detail",
+  "imageClassName": "object-cover object-center",
+  "order": 1
+}

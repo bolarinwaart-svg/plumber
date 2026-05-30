@@ -1,0 +1,25 @@
+{
+  "brandName": "Heatwave",
+  "companyName": "Heat Wave Plumbing & Heating",
+  "metadata": {
+    "title": "Heatwave Plumbing & Heating",
+    "description": "Plumbing and heating services in Leicester."
+  },
+  "contact": {
+    "email": "contact@heatwaveplumbing.co.uk",
+    "label": "Leicester plumbing and heating enquiries"
+  },
+  "navItems": [
+    { "label": "Home", "href": "/" },
+    { "label": "Plumbing", "href": "/plumbing" },
+    { "label": "Heating", "href": "/heating" },
+    { "label": "Blog", "href": "/blog" }
+  ],
+  "footer": {
+    "headline": "HEATWAVE",
+    "enquiryCopy": "Planning a plumbing or heating job in Leicester? Send the details and we will help you arrange the next step.",
+    "privacyCopy": "By sending your details you agree to our Privacy Policy and consent to being contacted about your enquiry.",
+    "legalLinks": ["Privacy Policy", "Terms of Service", "Cookies Settings"],
+    "socialLinks": ["Facebook", "Instagram", "Twitter", "LinkedIn"]
+  }
+}

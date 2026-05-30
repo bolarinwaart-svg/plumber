@@ -8,7 +8,17 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter), Arial, Helvetica, sans-serif;
+
+  /* Brand palette. Neutrals are tinted toward the brand blue rather than pure. */
+  --color-brand: #1d3eb0; /* deep blue: footer, primary buttons, dark panels */
+  --color-brand-bright: #1d5dec; /* brighter blue: raised panels, highlights */
+  --color-brand-accent: #3a81f7; /* accent: active nav, secondary CTAs */
+  --color-sky: #eff6ff; /* page wash, light surfaces */
+  --color-sky-200: #bfdbfe; /* mid light blue: chips, card media beds */
+  --color-ink: #282828; /* primary text */
+  --color-ink-soft: #3d3d3d; /* secondary text */
+
+  --font-sans: Arial, Helvetica, sans-serif;
   --font-display: var(--font-general-sans), Arial, Helvetica, sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
@@ -16,7 +26,25 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Consistent, visible keyboard focus across the site (WCAG 2.1 AA). */
+:focus-visible {
+  outline: 2px solid var(--color-brand-accent);
+  outline-offset: 2px;
+}
+
+/* Honor reduced-motion: transitions are polish, never required for meaning. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 h1,
@@ -29,10 +57,10 @@ h6 {
 }
 
 .site-container {
-  --site-gutter: clamp(1rem, 4vw, 2rem);
+  --site-gutter: clamp(1rem, 1.6vw, 2rem);
   box-sizing: border-box;
   width: 100%;
-  max-width: 1440px;
+  max-width: none;
   margin-inline: auto;
   padding-inline: var(--site-gutter);
 }

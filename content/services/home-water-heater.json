@@ -1,0 +1,10 @@
+{
+  "slug": "home-water-heater",
+  "category": "home",
+  "title": "Efficient Water Heater Installations",
+  "titleLines": ["Efficient Water Heater", "Installations"],
+  "image": "/service-water-heater.png",
+  "alt": "Wall mounted water heater system",
+  "imageClassName": "object-cover object-top",
+  "order": 3
+}

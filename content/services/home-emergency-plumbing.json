@@ -1,0 +1,10 @@
+{
+  "slug": "home-emergency-plumbing",
+  "category": "home",
+  "title": "Emergency Plumbing Solutions",
+  "titleLines": ["Emergency Plumbing", "Solutions"],
+  "image": "/service-emergency.png",
+  "alt": "Burst copper pipe leaking water",
+  "imageClassName": "object-cover object-center",
+  "order": 2
+}

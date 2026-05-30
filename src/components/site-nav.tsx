@@ -1,48 +1,32 @@
 import Link from "next/link";
 
 import { PrimaryPillButton } from "@/components/ui/primary-pill-button";
+import { getSiteSettings } from "@/lib/cms";
 
 type NavItem = {
   label: string;
   href: string;
-  isCurrent?: (path: string) => boolean;
 };
 
-const navItems: NavItem[] = [
-  { label: "Home", href: "/", isCurrent: (path) => path === "/" },
-  {
-    label: "Plumbing",
-    href: "/plumbing",
-    isCurrent: (path) => path.startsWith("/plumbing"),
-  },
-  {
-    label: "Heating",
-    href: "/heating",
-    isCurrent: (path) => path.startsWith("/heating"),
-  },
-  {
-    label: "Blog",
-    href: "/blog",
-    isCurrent: (path) => path.startsWith("/blog"),
-  },
-];
-
-export function SiteNav({
+export async function SiteNav({
   activePath = "/",
 }: Readonly<{
   activePath?: string;
 }>) {
+  const siteSettings = await getSiteSettings();
+  const navItems = siteSettings.navItems;
+
   return (
-    <header className="relative z-50 w-full bg-[#eff6ff] py-2 sm:py-3 lg:py-4">
+    <header className="relative z-50 w-full bg-sky py-2 sm:py-3 lg:py-4">
       <nav
         aria-label="Main navigation"
         className="site-container grid min-w-0 grid-cols-[1fr_auto] items-center gap-3 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-4"
       >
         <Link
           href="/"
-          className="min-w-0 text-2xl leading-[1.2] font-semibold whitespace-nowrap text-black sm:text-[1.75rem] lg:text-[2rem]"
+          className="min-w-0 rounded-md text-2xl leading-[1.2] font-semibold whitespace-nowrap text-ink transition-colors duration-200 ease-out hover:text-brand sm:text-[1.75rem] lg:text-[2rem]"
         >
-          Heatwave
+          {siteSettings.brandName}
         </Link>
 
         <div className="hidden h-[66px] min-w-0 items-center gap-4 overflow-hidden rounded-[60px] bg-white lg:flex">
@@ -52,28 +36,35 @@ export function SiteNav({
               item={item}
               activePath={activePath}
               className={[
-                "flex h-full min-w-0 flex-1 items-center justify-center rounded-[60px] px-2 py-3 text-[1.125rem] leading-[1.5] font-semibold whitespace-nowrap",
+                "flex h-full min-w-0 flex-1 items-center justify-center rounded-[60px] px-2 py-3 text-[1.125rem] leading-[1.5] font-semibold whitespace-nowrap transition-colors duration-200 ease-out",
                 isCurrentItem(item, activePath)
-                  ? "bg-[#3a81f7] text-white"
-                  : "text-[#282828]",
+                  ? "bg-brand-accent text-white"
+                  : "text-ink hover:bg-sky",
               ].join(" ")}
             />
           ))}
         </div>
 
-        <div className="flex shrink-0 items-center justify-end gap-3 lg:hidden">
+        <div className="flex shrink-0 items-center justify-end gap-3.5 lg:hidden">
           <a
-            href="tel:+15551234567"
-            aria-label="Call Heatwave"
-            className="flex size-11 items-center justify-center rounded-[30px] bg-[#1d3eb0] text-white"
+            href="/contact"
+            aria-label="Request a call back from Heatwave"
+            className="flex size-11 items-center justify-center rounded-[30px] bg-brand text-white transition-colors duration-200 ease-out hover:bg-brand-bright md:hidden"
           >
             <PhoneIcon />
+          </a>
+
+          <a
+            href="/contact"
+            className="hidden items-center justify-center rounded-[30px] bg-brand px-4 py-2 text-[1.125rem] leading-[1.5] font-semibold whitespace-nowrap text-white transition-colors duration-200 ease-out hover:bg-brand-bright md:inline-flex"
+          >
+            Contact Us
           </a>
 
           <details className="group relative">
             <summary
               aria-label="Toggle navigation menu"
-              className="flex size-11 cursor-pointer list-none items-center justify-center rounded-[30px] bg-white text-black shadow-sm outline-none [&::-webkit-details-marker]:hidden"
+              className="flex size-11 cursor-pointer list-none items-center justify-center rounded-[30px] bg-white text-ink shadow-sm transition-colors duration-200 ease-out hover:bg-sky [&::-webkit-details-marker]:hidden"
             >
               <MenuIcon />
             </summary>
@@ -86,16 +77,16 @@ export function SiteNav({
                     item={item}
                     activePath={activePath}
                     className={[
-                      "rounded-[18px] px-4 py-3 text-base leading-normal font-semibold",
+                      "rounded-[18px] px-4 py-3 text-base leading-normal font-semibold transition-colors duration-200 ease-out",
                       isCurrentItem(item, activePath)
-                        ? "bg-[#3a81f7] text-white"
-                        : "text-[#282828]",
+                        ? "bg-brand-accent text-white"
+                        : "text-ink hover:bg-sky",
                     ].join(" ")}
                   />
                 ))}
                 <a
                   href="/contact"
-                  className="mt-1 rounded-[18px] bg-[#1d3eb0] px-4 py-3 text-center text-base leading-normal font-semibold text-white"
+                  className="mt-1 rounded-[18px] bg-brand px-4 py-3 text-center text-base leading-normal font-semibold text-white transition-colors duration-200 ease-out hover:bg-brand-bright"
                 >
                   Contact Us
                 </a>
@@ -104,12 +95,14 @@ export function SiteNav({
           </details>
         </div>
 
-        <PrimaryPillButton
-          href="/contact"
-          className="hidden h-[66px] shrink-0 rounded-[50px] px-7 text-[1.125rem] leading-[1.5] font-semibold lg:flex"
-        >
-          Contact Us
-        </PrimaryPillButton>
+        <div className="hidden shrink-0 lg:block">
+          <PrimaryPillButton
+            href="/contact"
+            className="h-[66px] rounded-[50px] px-7 text-[1.125rem] leading-[1.5] font-semibold"
+          >
+            Contact Us
+          </PrimaryPillButton>
+        </div>
       </nav>
     </header>
   );
@@ -150,7 +143,7 @@ function NavLink({
 }
 
 function isCurrentItem(item: NavItem, activePath: string) {
-  return item.isCurrent?.(activePath) ?? false;
+  return item.href === "/" ? activePath === "/" : activePath.startsWith(item.href);
 }
 
 function PhoneIcon() {

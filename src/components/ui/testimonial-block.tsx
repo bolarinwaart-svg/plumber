@@ -81,21 +81,21 @@ export function TestimonialBlock({
 
         <div
           className={[
-            "flex w-full flex-col items-start gap-6 overflow-hidden text-left",
+            "flex w-full flex-col items-start gap-6 overflow-hidden text-left min-[744px]:max-[1023px]:max-w-none min-[744px]:max-[1023px]:items-center min-[744px]:max-[1023px]:text-center",
             isHorizontal ? "max-w-[561px]" : "max-w-none",
           ]
             .filter(Boolean)
             .join(" ")}
         >
-          <div aria-label={`${rating} out of 5 stars`} className="text-[1.125rem] leading-none tracking-[0.0625rem] text-black">
+          <div aria-label={`${rating} out of 5 stars`} className="text-[1.125rem] leading-none tracking-[0.0625rem] text-black min-[744px]:max-[1023px]:text-[1.25rem]">
             {stars}
           </div>
 
-          <blockquote className="text-[1.125rem] leading-[1.5] font-normal text-[#3d3d3d]">
+          <blockquote className="text-[1rem] leading-[1.55] font-normal text-ink-soft min-[744px]:text-[1.125rem] min-[744px]:leading-[1.5] min-[744px]:max-[1023px]:mx-auto min-[744px]:max-[1023px]:max-w-full">
             {quote}
           </blockquote>
 
-          <div className="flex flex-col items-start leading-[1.5] whitespace-nowrap text-black">
+          <div className="flex flex-col items-start leading-[1.5] whitespace-nowrap text-black min-[744px]:max-[1023px]:items-center">
             <p className="text-[1.25rem] font-bold">{name}</p>
             <p className="text-[1rem] font-normal">{title}</p>
           </div>

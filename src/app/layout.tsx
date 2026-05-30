@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import localFont from "next/font/local";
+import { getSiteSettings } from "@/lib/cms";
 import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 const generalSans = localFont({
   src: "../fonts/GeneralSans-Variable.woff2",
@@ -16,10 +10,14 @@ const generalSans = localFont({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Heatwave Plumbing & Heating",
-  description: "Plumbing and heating services in Leicester.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const siteSettings = await getSiteSettings();
+
+  return {
+    title: siteSettings.metadata.title,
+    description: siteSettings.metadata.description,
+  };
+}
 
 export default function RootLayout({
   children,
@@ -29,7 +27,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`h-full antialiased ${inter.variable} ${generalSans.variable}`}
+      className={`h-full antialiased ${generalSans.variable}`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>{children}</body>

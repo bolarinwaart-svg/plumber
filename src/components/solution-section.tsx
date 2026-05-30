@@ -5,8 +5,8 @@ import { SplitContentSection } from "@/components/ui/split-content-section";
 
 const solutionItems = [
   "High Quality Equipment",
-  "Advance Services and Support",
-  "Qualified Staffs",
+  "Advanced Services and Support",
+  "Qualified Staff",
 ];
 
 export function SolutionSection() {
@@ -15,21 +15,26 @@ export function SolutionSection() {
       as="section"
       tone="lightBlue"
       mediaPosition="right"
+      mediaFirstOnMobile
+      twoColumnAt="1000px"
       align="start"
       className="pb-6"
-      innerClassName="lg:items-stretch lg:gap-[18px] lg:grid-cols-[2fr_3fr]"
+      innerClassName="min-[1000px]:items-stretch min-[1000px]:gap-[18px] min-[1000px]:grid-cols-[2.2fr_3fr]"
       textClassName=""
-      mediaClassName="relative h-[300px] overflow-hidden rounded-2xl lg:h-auto lg:min-h-[406px] lg:rounded-[32px]"
+      mediaClassName="relative h-[300px] overflow-hidden rounded-2xl min-[768px]:h-[400px] min-[768px]:rounded-3xl min-[1000px]:h-auto min-[1000px]:self-stretch min-[1000px]:rounded-[32px]"
       title={
-        <div className="flex flex-col gap-4 rounded-2xl bg-[#bfdbfe] px-2 py-4 lg:rounded-[32px] lg:px-4 lg:py-[30px]">
+        <div className="flex flex-col gap-4 rounded-2xl bg-sky-200 px-2 py-4 md:rounded-3xl md:px-4 md:py-[30px] min-[1000px]:rounded-[32px]">
           <BadgeChip variant="outlined" tone="blue" size="sm" className="self-start bg-white">
             Value
           </BadgeChip>
-          <div className="flex flex-col gap-4 lg:gap-6">
-            <h2 className="text-2xl leading-[1.3] font-medium text-black lg:text-[2rem]">
-              We Offer The Perfect Solution For Your Home Problem
+          <div className="flex flex-col gap-4 md:gap-6">
+            <h2 className="text-2xl leading-[1.4] font-medium text-black md:text-[2rem] md:leading-[1.3]">
+              We Offer The Perfect Solution
+              <br className="hidden md:max-[999px]:block" />
+              <span className="md:max-[999px]:hidden"> </span>
+              For Your Home Problem
             </h2>
-            <p className="text-base leading-[1.5] font-normal text-[#3d3d3d] lg:text-[1.125rem]">
+            <p className="text-base leading-[1.5] font-normal text-ink-soft md:text-[1.125rem]">
               Our plumbing services cover everything from minor repairs to major
               installations. Our skilled plumbers are dedicated to ensuring your
               plumbing works seamlessly, providing peace of mind.
@@ -42,18 +47,18 @@ export function SolutionSection() {
           src="/solution-plumber.jpg"
           alt="Plumber installing pipework under a sink"
           fill
-          sizes="(min-width: 1024px) 58vw, calc(100vw - 32px)"
-          className="object-cover object-[57%_50%] lg:object-[55%_50%]"
+          sizes="(min-width: 1000px) 58vw, calc(100vw - 32px)"
+          className="object-cover object-[57%_50%] min-[1000px]:object-[55%_50%]"
         />
       }
     >
-      <div className="flex flex-col gap-2 lg:gap-4">
+      <div className="flex flex-col gap-2 md:gap-4 min-[1000px]:mt-3.5">
         {solutionItems.map((item) => (
           <div
             key={item}
-            className="rounded-[30px] bg-[#1d5dec] px-4 py-4"
+            className="rounded-[30px] bg-brand px-4 py-2 md:py-4 min-[1000px]:bg-brand-bright"
           >
-            <p className="text-base leading-[1.5] font-semibold text-white lg:text-xl">
+            <p className="text-base leading-[1.5] font-semibold text-white md:text-xl">
               {item}
             </p>
           </div>

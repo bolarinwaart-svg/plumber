@@ -1,0 +1,15 @@
+{
+  "slug": "john-doe",
+  "name": "John Doe",
+  "title": "CEO, ABC Company",
+  "rating": 5,
+  "image": "/testimonial-client-portrait.png",
+  "alt": "John Doe testimonial portrait",
+  "quoteLines": [
+    "I had a great experience with Heat Wave Plumbing & Heating.",
+    "They were prompt, professional, and fixed my plumbing issue quickly.",
+    "Highly recommended!"
+  ],
+  "featured": true,
+  "order": 1
+}

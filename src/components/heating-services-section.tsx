@@ -1,30 +1,9 @@
 import { MediaCard } from "@/components/ui/media-card";
+import { getServicesByCategory } from "@/lib/cms";
 
-const services = [
-  {
-    title: "Boiler Replacement and Installation",
-    description:
-      "Upgrade your old and inefficient boiler with our professional replacement and installation services.",
-    image: "/heating-boiler.png",
-    alt: "Boiler replacement equipment",
-  },
-  {
-    title: "Underfloor Heating Solutions",
-    description:
-      "Experience the comfort and energy efficiency of underfloor heating in your home or office.",
-    image: "/heating-underfloor.png",
-    alt: "Underfloor heating roll",
-  },
-  {
-    title: "Radiator Installation and Repair",
-    description:
-      "Get professional radiator installation and repair services to keep your space warm and cozy.",
-    image: "/heating-radiator.png",
-    alt: "Radiator installation equipment",
-  },
-] as const;
+export async function HeatingServicesSection() {
+  const services = await getServicesByCategory("heating");
 
-export function HeatingServicesSection() {
   return (
     <section className="site-container pb-6">
       <div className="rounded-2xl bg-white px-2 py-4 lg:rounded-[32px] lg:px-4 lg:py-[50px]">
@@ -47,7 +26,7 @@ export function HeatingServicesSection() {
           <div className="grid gap-3 lg:grid-cols-3 lg:gap-4">
             {services.map((service) => (
               <MediaCard
-                key={service.title}
+                key={service.slug}
                 variant="feature"
                 image={service.image}
                 alt={service.alt}

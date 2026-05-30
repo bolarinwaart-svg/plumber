@@ -2,14 +2,14 @@ import Image from "next/image";
 
 export function PlumbingHeroSection() {
   return (
-    <section className="site-container pb-6 pt-1 sm:pt-2 xl:pb-10 xl:pt-0">
+    <section className="site-container pb-6 pt-1 sm:pt-2 lg:pb-10 lg:pt-0">
       <div className="relative h-[421px] overflow-hidden rounded-[32px] bg-[#1d3eb0]">
         <Image
           src="/plumbing-hero-figma.jpg"
           alt="Plumber repairing pipework under a sink"
           fill
           priority
-          sizes="(min-width: 1440px) 1440px, calc(100vw - 32px)"
+          sizes="(min-width: 1024px) 1440px, calc(100vw - 32px)"
           className="object-cover object-[50%_36%]"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,#1d5dec_2.824%,rgba(29,62,176,0)_65.784%)]" />

@@ -1,33 +1,9 @@
 import { MediaCard } from "@/components/ui/media-card";
+import { getServicesByCategory } from "@/lib/cms";
 
-const services = [
-  {
-    title: "Leak Repairs Done Right",
-    description:
-      "Don't let a leak cause further damage. Our expert plumbers will quickly identify and fix any leaks in your plumbing system, ensuring that your home remains dry and safe.",
-    image: "/service-emergency.png",
-    alt: "Leaking copper pipe",
-    imageClassName: "object-cover object-[42%_56%]",
-  },
-  {
-    title: "Professional Installations",
-    description:
-      "Whether you need a new faucet, toilet, or shower installed, our team has the expertise to handle any plumbing installation with precision and care.",
-    image: "/service-installation.png",
-    alt: "Copper and white pipe connector",
-    imageClassName: "object-cover object-center",
-  },
-  {
-    title: "Reliable Plumbing Maintenance Services",
-    description:
-      "Regular maintenance is key to preventing plumbing issues. Our maintenance services will keep your plumbing system in top condition, saving you time and money in the long run.",
-    image: "/service-maintenance.png",
-    alt: "Open plumber toolkit",
-    imageClassName: "object-cover object-[72%_50%]",
-  },
-];
+export async function PlumbingServicesSection() {
+  const services = await getServicesByCategory("plumbing");
 
-export function PlumbingServicesSection() {
   return (
     <section className="site-container pb-6">
       <div className="rounded-2xl bg-white px-2 py-4 lg:rounded-[32px] lg:px-4 lg:py-[50px]">
@@ -49,7 +25,7 @@ export function PlumbingServicesSection() {
           <div className="grid gap-3 lg:grid-cols-3 lg:gap-4">
             {services.map((service) => (
               <MediaCard
-                key={service.title}
+                key={service.slug}
                 variant="feature"
                 image={service.image}
                 alt={service.alt}

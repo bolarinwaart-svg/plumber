@@ -19,7 +19,7 @@ export function ContactVisualSection() {
             src={contactImagePrimary}
             alt="Plumber standing in a bathroom"
             fill
-            sizes="(min-width: 1280px) 100vw, calc(100vw - 32px)"
+            sizes="(min-width: 1024px) 100vw, calc(100vw - 32px)"
             className="object-cover object-[50%_45%]"
           />
         </div>
