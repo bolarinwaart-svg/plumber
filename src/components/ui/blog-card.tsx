@@ -30,7 +30,8 @@ export function BlogCard({
   className,
 }: Readonly<BlogCardProps>) {
   return (
-    <article className={["group flex h-full w-full min-w-0 flex-col overflow-hidden rounded-[24px] bg-white", className ?? ""].filter(Boolean).join(" ")}>
+    <article className={["group relative flex h-full w-full min-w-0 flex-col overflow-hidden rounded-[24px] bg-white", className ?? ""].filter(Boolean).join(" ")}>
+      <Link href={href} aria-label={typeof title === "string" ? title : undefined} className="absolute inset-0 z-10" />
       <div className="relative h-[220px] overflow-hidden rounded-[24px] bg-sky-200 sm:h-[280px] lg:h-[500px]">
         <Image
           src={image}
@@ -69,13 +70,13 @@ export function BlogCard({
           </div>
         </div>
 
-        <Link
-          href={href}
-          className="mt-auto inline-flex items-center gap-2 text-base leading-[1.5] font-semibold text-ink transition-colors duration-200 ease-out hover:text-brand [&:hover_svg]:translate-x-1 [&_svg]:transition-transform [&_svg]:duration-200 [&_svg]:ease-out"
+        <span
+          aria-hidden
+          className="relative z-20 mt-auto inline-flex w-fit items-center gap-2 text-base leading-[1.5] font-semibold text-ink transition-colors duration-200 ease-out group-hover:text-brand [.group:hover_svg]:translate-x-1 [&_svg]:transition-transform [&_svg]:duration-200 [&_svg]:ease-out"
         >
           {ctaLabel}
           <ChevronRightIcon />
-        </Link>
+        </span>
       </div>
     </article>
   );

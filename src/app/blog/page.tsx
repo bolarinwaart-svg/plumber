@@ -13,7 +13,7 @@ export default function BlogPage() {
   return (
     <main className="flex min-h-screen flex-col bg-[#eff6ff]">
       <SiteNav activePath="/blog" />
-      <div className="w-full max-w-[1512px] mx-auto">
+      <div className="w-full max-w-[1512px] mx-auto flex flex-col gap-4 py-4">
         <BlogHeroSection />
         <BlogPostsSection />
       </div>

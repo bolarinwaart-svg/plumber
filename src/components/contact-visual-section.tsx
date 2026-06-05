@@ -6,7 +6,7 @@ const contactImagePrimary = "https://www.figma.com/api/mcp/asset/c1a0bc01-8d19-4
 
 export function ContactVisualSection() {
   return (
-    <section className="site-container pb-6">
+    <section className="site-container py-4">
       <SectionShell
         as="div"
         tone="white"

@@ -12,7 +12,7 @@ export function HeroSection() {
       mediaFirstOnMobile
       twoColumnAt="1000px"
       align="start"
-      className="pt-1 sm:pt-2 min-[1000px]:pt-0"
+      className="py-4"
       innerClassName="min-[1000px]:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] min-[1000px]:items-stretch"
       textClassName="rounded-2xl bg-white px-4 py-6 sm:p-8 md:max-[999px]:gap-8 md:max-[999px]:px-4 md:max-[999px]:pb-14 md:max-[999px]:pt-14 min-[1000px]:gap-6 min-[1000px]:rounded-[30px] min-[1000px]:px-4 min-[1000px]:py-14"
       mediaClassName="relative h-[13.75rem] overflow-hidden rounded-2xl sm:h-[18rem] md:h-[24rem] min-[1000px]:h-auto min-[1000px]:rounded-[30px]"

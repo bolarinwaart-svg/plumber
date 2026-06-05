@@ -5,7 +5,7 @@ const contactImagePrimary =
 
 export function ContactInfoStrip() {
   return (
-    <section className="site-container pb-6">
+    <section className="site-container py-4">
       <div className="flex flex-col gap-8 rounded-[30px] bg-white p-4">
         <div className="grid gap-6 sm:grid-cols-2 lg:flex lg:gap-20">
           <div className="flex min-w-0 flex-col gap-2 lg:flex-1">

@@ -22,7 +22,7 @@ export function SolutionsShowcase({
   accentClassName = "bg-[#bfdbfe]",
 }: SolutionsShowcaseProps) {
   return (
-    <section className="site-container pb-6">
+    <section className="site-container py-4">
       <div className="flex flex-col gap-4 overflow-hidden rounded-[30px] p-4 lg:flex-row lg:items-stretch">
         <div className="flex flex-1 items-center rounded-[32px] bg-[#1d3eb0] px-4 py-8">
           <div className="flex w-full flex-col gap-10">

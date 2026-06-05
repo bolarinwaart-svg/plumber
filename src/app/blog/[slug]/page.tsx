@@ -99,9 +99,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <main className="min-h-screen bg-sky">
       <SiteNav activePath="/blog" />
-      <div className="w-full max-w-[1512px] mx-auto">
+      <div className="w-full max-w-[1512px] mx-auto flex flex-col gap-4 py-4">
       {/* Hero — matches Figma 6415:12384 */}
-      <section className="site-container pt-2 pb-6">
+      <section className="site-container py-4">
         <div className="relative h-[444px] overflow-hidden rounded-[32px] bg-ink">
           <Image
             src={post.image}
@@ -165,7 +165,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </section>
 
       {/* Article body — Figma 6415:12398: single centered column inside white card */}
-      <section className="site-container pt-2 pb-10 lg:pt-4 lg:pb-16">
+      <section className="site-container py-4">
         <article className="overflow-hidden rounded-[32px] bg-white px-5 py-10 sm:px-8 sm:py-12 lg:px-8 lg:py-[50px]">
           <div className="mx-auto flex w-full max-w-[768px] flex-col gap-10">
             <div className="flex flex-wrap items-center justify-between gap-4">
@@ -210,7 +210,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Featured / related posts */}
       {related.length ? (
-        <section className="site-container pb-10 lg:pb-16">
+        <section className="site-container py-4">
           <div className="overflow-hidden rounded-[32px] bg-sky-200 px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
             <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-end sm:justify-between sm:gap-12">
               <div className="flex max-w-[36ch] flex-col gap-4">
@@ -258,7 +258,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       ) : null}
 
       {/* Contact CTA strip — asymmetric: heading left, action right on lg */}
-      <section className="site-container pb-10 lg:pb-16">
+      <section className="site-container py-4">
         <div className="overflow-hidden rounded-[32px] bg-white px-6 py-10 sm:px-10 sm:py-14 lg:px-16">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
             <div className="flex max-w-[34ch] flex-col gap-4">
@@ -284,7 +284,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </section>
 
       {/* FAQ */}
-      <section className="site-container pb-10 lg:pb-16">
+      <section className="site-container py-4">
         <div className="rounded-[32px] bg-white p-4 lg:p-6">
           <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,520px)_minmax(0,1fr)] lg:gap-16">
             <div className="relative h-[22rem] w-full overflow-hidden rounded-[24px] bg-sky-200 sm:h-[28rem] lg:sticky lg:top-24 lg:h-[34rem]">

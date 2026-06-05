@@ -7,7 +7,7 @@ export async function BlogPostsSection() {
   const posts = await getBlogPosts();
 
   return (
-    <section className="site-container pb-6">
+    <section className="site-container py-4">
       <div className="overflow-hidden rounded-[30px] bg-[#bfdbfe] px-4 py-4 sm:px-5 sm:py-5">
         <div className="flex flex-col gap-6 sm:gap-8">
           <div className="flex flex-wrap gap-2 sm:gap-3">

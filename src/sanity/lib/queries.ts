@@ -40,6 +40,36 @@ export const blogPostsQuery = groq`
   }
 `;
 
+export const blogPostSlugsQuery = groq`
+  *[_type == "blogPost" && defined(slug.current)] | order(order asc) {
+    "slug": slug.current
+  }
+`;
+
+export const blogPostBySlugQuery = groq`
+  *[_type == "blogPost" && slug.current == $slug][0] {
+    "slug": slug.current,
+    title,
+    excerpt,
+    category,
+    readTime,
+    publishedAt,
+    "image": coalesce(image.asset->url, imageUrl, imagePath),
+    alt,
+    "featured": coalesce(featured, false),
+    "order": coalesce(order, 0),
+    seoTitle,
+    seoDescription,
+    body[] {
+      ...,
+      _type == "image" => {
+        ...,
+        "url": asset->url
+      }
+    }
+  }
+`;
+
 export const servicesQuery = groq`
   *[_type == "service" && defined(slug.current)] | order(order asc) {
     "slug": slug.current,

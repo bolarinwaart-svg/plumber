@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function HeatingHeroSection() {
   return (
-    <section className="site-container pb-6 pt-1 sm:pt-2 lg:pb-10 lg:pt-0">
+    <section className="site-container py-4">
       <div className="relative h-[421px] overflow-hidden rounded-[32px] bg-[#1d3eb0]">
         <Image
           src="/heating-hero.jpg"

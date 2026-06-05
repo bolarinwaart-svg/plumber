@@ -14,7 +14,7 @@ export default function ContactPage() {
   return (
     <main className="flex min-h-screen flex-col bg-[#eff6ff]">
       <SiteNav activePath="/contact" />
-      <div className="w-full max-w-[1512px] mx-auto">
+      <div className="w-full max-w-[1512px] mx-auto flex flex-col gap-4 py-4">
         <ContactHeroSection />
         <ContactInfoStrip />
         <ContactFormSection />

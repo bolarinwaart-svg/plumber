@@ -5,7 +5,7 @@ export async function PlumbingServicesSection() {
   const services = await getServicesByCategory("plumbing");
 
   return (
-    <section className="site-container pb-6">
+    <section className="site-container py-4">
       <div className="rounded-2xl bg-white px-2 py-4 lg:rounded-[32px] lg:px-4 lg:py-[50px]">
         <div className="flex flex-col gap-8 lg:gap-20">
           <div className="grid gap-5 lg:grid-cols-2 lg:gap-20">

@@ -9,7 +9,7 @@ export function HeatingBlueSection() {
       tone="lightBlue"
       mediaPosition="left"
       align="start"
-      className="pb-6"
+      className="py-4"
       innerClassName="gap-[15px] lg:items-end"
       textClassName="rounded-[16px] bg-[#1d3eb0] px-2 py-4 text-white lg:rounded-[30px] lg:px-4 lg:py-8"
       mediaClassName="relative h-[300px] overflow-hidden rounded-[16px] lg:flex-[1_0_0] lg:rounded-[30px]"

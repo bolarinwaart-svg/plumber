@@ -8,7 +8,7 @@ export function HeatingCtaSection() {
       tone="white"
       radius="lg"
       padding="lg"
-      className="pb-6"
+      className="py-4"
       innerClassName="flex min-h-[220px] flex-col justify-center gap-4 px-0 py-0 sm:gap-5"
     >
       <div className="max-w-[30rem]">

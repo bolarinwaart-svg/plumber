@@ -13,7 +13,7 @@ export function ContactFormSection() {
       tone="white"
       mediaPosition="left"
       align="center"
-      className="pb-6"
+      className="py-4"
       innerClassName="gap-4 overflow-hidden lg:grid-cols-2 lg:gap-0"
       textClassName="flex flex-col gap-8 px-4 py-6 lg:justify-center lg:px-4 lg:py-4"
       mediaClassName="relative min-h-[420px] overflow-hidden rounded-[30px] lg:min-h-[734px]"

@@ -3,6 +3,8 @@ import path from "node:path";
 
 import { isSanityConfigured, sanityClient } from "@/sanity/lib/client";
 import {
+  blogPostBySlugQuery,
+  blogPostSlugsQuery,
   blogPostsQuery,
   servicesQuery,
   siteSettingsQuery,
@@ -44,11 +46,24 @@ export type BlogPost = {
   excerpt: string;
   category: "Plumbing" | "Heating";
   readTime: string;
+  publishedAt?: string;
   image: string;
   alt: string;
   featured: boolean;
   order: number;
+  seoTitle?: string;
+  seoDescription?: string;
+  author?: string;
+  authorImage?: string;
+  body?: PortableTextContent;
 };
+
+export type BlogFaq = {
+  question: string;
+  answer: string;
+};
+
+export type PortableTextContent = Array<Record<string, unknown>>;
 
 export type Service = {
   slug: string;
@@ -94,12 +109,19 @@ function readCollection<T extends { order?: number }>(relativePath: string): T[]
     .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 }
 
-async function fetchSanityCollection<T>(query: string) {
+async function fetchSanityCollection<T>(
+  query: string,
+  params?: Record<string, string>,
+) {
   if (!isSanityConfigured) {
     return null;
   }
 
   try {
+    if (params) {
+      return await sanityClient.fetch<T[]>(query, params);
+    }
+
     return await sanityClient.fetch<T[]>(query);
   } catch {
     return null;
@@ -119,12 +141,19 @@ async function fetchSanityCollectionOrFallback<T extends { order?: number }>(
   return readCollection<T>(fallbackPath);
 }
 
-async function fetchSanityDocument<T>(query: string) {
+async function fetchSanityDocument<T>(
+  query: string,
+  params?: Record<string, string>,
+) {
   if (!isSanityConfigured) {
     return null;
   }
 
   try {
+    if (params) {
+      return await sanityClient.fetch<T>(query, params);
+    }
+
     return await sanityClient.fetch<T>(query);
   } catch {
     return null;
@@ -148,8 +177,24 @@ export async function getBlogPosts(options?: { featuredOnly?: boolean; limit?: n
   return typeof options?.limit === "number" ? posts.slice(0, options.limit) : posts;
 }
 
+export async function getBlogPostSlugs() {
+  const sanitySlugs = await fetchSanityCollection<{ slug: string }>(blogPostSlugsQuery);
+
+  if (sanitySlugs?.length) {
+    return sanitySlugs.map((post) => post.slug);
+  }
+
+  return readCollection<BlogPost>("blog").map((post) => post.slug);
+}
+
 export async function getBlogPost(slug: string) {
-  return (await getBlogPosts()).find((post) => post.slug === slug);
+  const sanityPost = await fetchSanityDocument<BlogPost>(blogPostBySlugQuery, { slug });
+
+  if (sanityPost) {
+    return sanityPost;
+  }
+
+  return readCollection<BlogPost>("blog").find((post) => post.slug === slug);
 }
 
 export async function getServicesByCategory(category: Service["category"]) {

@@ -4,7 +4,7 @@ const contactHeroImage = "https://www.figma.com/api/mcp/asset/1c681f95-ac92-4425
 
 export function ContactHeroSection() {
   return (
-    <section className="site-container pb-6">
+    <section className="site-container py-4">
       <div className="relative h-[421px] overflow-hidden rounded-[32px] bg-[#1d3eb0]">
         <Image
           src={contactHeroImage}

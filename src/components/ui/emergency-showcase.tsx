@@ -15,7 +15,7 @@ export function EmergencyShowcase({
   children,
 }: EmergencyShowcaseProps) {
   return (
-    <section className="site-container pb-6">
+    <section className="site-container py-4">
       <div className="grid gap-4 lg:grid-cols-2 lg:items-stretch">
         <div className="relative min-h-[300px] overflow-hidden rounded-2xl lg:min-h-[640px] lg:rounded-[30px]">
           {media}

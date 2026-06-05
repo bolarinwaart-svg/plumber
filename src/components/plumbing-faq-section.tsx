@@ -25,9 +25,9 @@ const questions = [
 
 export function PlumbingFaqSection() {
   return (
-    <section className="site-container pb-6">
+    <section className="site-container py-4">
       <FaqPanel
-        image="/solution-plumber.jpg"
+        image="/solution-plumber-figma.png"
         alt="Plumber fitting pipework below a sink"
         title="FAQs"
         description="Find answers to commonly asked questions about our services and processes."

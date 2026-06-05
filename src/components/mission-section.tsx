@@ -9,7 +9,7 @@ const avatars = [
 
 export function MissionSection() {
   return (
-    <section className="site-container">
+    <section className="site-container py-4">
       <div className="rounded-2xl bg-sky p-2 lg:rounded-[30px] lg:p-4">
         <div className="grid gap-4 md:grid-cols-2 md:items-stretch lg:grid-cols-[minmax(0,449px)_minmax(0,1fr)]">
           <div className="flex rounded-2xl bg-brand px-2 md:px-4 md:rounded-3xl lg:rounded-[30px] lg:bg-brand-bright">
