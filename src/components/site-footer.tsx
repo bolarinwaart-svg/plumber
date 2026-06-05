@@ -20,7 +20,7 @@ export async function SiteFooter() {
   }));
 
   return (
-    <footer className="site-container pb-4">
+    <footer className="site-container max-w-[1512px] mx-auto pb-4">
       <div className="overflow-hidden rounded-[30px] bg-brand px-4 py-8 text-sky sm:px-5 sm:py-10">
         <div className="flex flex-col gap-10 sm:gap-12 lg:gap-20 lg:px-4 lg:py-8">
         <div>

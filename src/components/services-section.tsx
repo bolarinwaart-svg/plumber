@@ -10,7 +10,7 @@ export async function ServicesSection() {
   const services = await getServicesByCategory("home");
 
   return (
-    <section className="site-container pb-6">
+    <section className="site-container">
       <div className="rounded-2xl bg-white py-4 min-[1000px]:rounded-[32px]">
         <div className="flex flex-col gap-8 min-[1000px]:gap-12">
           <div className="flex flex-col gap-6 px-2 min-[1000px]:flex-row min-[1000px]:justify-between min-[1000px]:gap-[153px] min-[1000px]:px-4">

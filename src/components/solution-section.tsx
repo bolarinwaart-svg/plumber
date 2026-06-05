@@ -18,7 +18,7 @@ export function SolutionSection() {
       mediaFirstOnMobile
       twoColumnAt="1000px"
       align="start"
-      className="pb-6"
+      className=""
       innerClassName="min-[1000px]:items-stretch min-[1000px]:gap-[18px] min-[1000px]:grid-cols-[2.2fr_3fr]"
       textClassName=""
       mediaClassName="relative h-[300px] overflow-hidden rounded-2xl min-[768px]:h-[400px] min-[768px]:rounded-3xl min-[1000px]:h-auto min-[1000px]:self-stretch min-[1000px]:rounded-[32px]"
@@ -44,7 +44,7 @@ export function SolutionSection() {
       }
       media={
         <Image
-          src="/solution-plumber.jpg"
+          src="/solution-plumber-figma.png"
           alt="Plumber installing pipework under a sink"
           fill
           sizes="(min-width: 1000px) 58vw, calc(100vw - 32px)"

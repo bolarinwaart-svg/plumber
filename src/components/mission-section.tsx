@@ -1,15 +1,15 @@
 import Image from "next/image";
 
 const avatars = [
-  { src: "/avatar-review-1.png", alt: "Customer review avatar 1" },
-  { src: "/avatar-review-2.png", alt: "Customer review avatar 2" },
-  { src: "/avatar-review-3.png", alt: "Customer review avatar 3" },
-  { src: "/avatar-review-4.png", alt: "Customer review avatar 4" },
+  { src: "/avatar-review-1-figma.png", alt: "Customer review avatar 1" },
+  { src: "/avatar-review-2-figma.png", alt: "Customer review avatar 2" },
+  { src: "/avatar-review-3-figma.png", alt: "Customer review avatar 3" },
+  { src: "/avatar-review-4-figma.png", alt: "Customer review avatar 4" },
 ];
 
 export function MissionSection() {
   return (
-    <section className="site-container pb-6">
+    <section className="site-container">
       <div className="rounded-2xl bg-sky p-2 lg:rounded-[30px] lg:p-4">
         <div className="grid gap-4 md:grid-cols-2 md:items-stretch lg:grid-cols-[minmax(0,449px)_minmax(0,1fr)]">
           <div className="flex rounded-2xl bg-brand px-2 md:px-4 md:rounded-3xl lg:rounded-[30px] lg:bg-brand-bright">

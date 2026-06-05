@@ -14,9 +14,11 @@ export default function ContactPage() {
   return (
     <main className="flex min-h-screen flex-col bg-[#eff6ff]">
       <SiteNav activePath="/contact" />
-      <ContactHeroSection />
-      <ContactInfoStrip />
-      <ContactFormSection />
+      <div className="w-full max-w-[1512px] mx-auto">
+        <ContactHeroSection />
+        <ContactInfoStrip />
+        <ContactFormSection />
+      </div>
       <SiteFooter />
     </main>
   );

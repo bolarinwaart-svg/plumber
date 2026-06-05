@@ -20,7 +20,7 @@ export async function SiteNav({
     <header className="relative z-50 w-full bg-sky py-2 sm:py-3 lg:py-4">
       <nav
         aria-label="Main navigation"
-        className="site-container grid min-w-0 grid-cols-[1fr_auto] items-center gap-3 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-4"
+        className="site-container max-w-[1512px] mx-auto grid min-w-0 grid-cols-[1fr_auto] items-center gap-3 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-4"
       >
         <Link
           href="/"

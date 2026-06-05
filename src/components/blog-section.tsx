@@ -6,7 +6,7 @@ export async function BlogSection() {
   const posts = await getBlogPosts({ featuredOnly: true, limit: 3 });
 
   return (
-    <section className="site-container pb-6">
+    <section className="site-container">
       <div className="overflow-hidden rounded-2xl bg-sky-200 p-4 sm:p-5 lg:rounded-[32px] lg:p-4">
         <div className="flex flex-col items-start justify-center gap-8 lg:px-4">
           <div className="w-full">

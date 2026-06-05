@@ -11,12 +11,14 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-sky">
       <SiteNav activePath="/" />
-      <HeroSection />
-      <MissionSection />
-      <SolutionSection />
-      <ServicesSection />
-      <TestimonialSection />
-      <BlogSection />
+      <div className="w-full max-w-[1512px] mx-auto flex flex-col gap-4 py-4">
+        <HeroSection />
+        <MissionSection />
+        <SolutionSection />
+        <ServicesSection />
+        <TestimonialSection />
+        <BlogSection />
+      </div>
       <SiteFooter />
     </main>
   );

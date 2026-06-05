@@ -13,8 +13,10 @@ export default function BlogPage() {
   return (
     <main className="flex min-h-screen flex-col bg-[#eff6ff]">
       <SiteNav activePath="/blog" />
-      <BlogHeroSection />
-      <BlogPostsSection />
+      <div className="w-full max-w-[1512px] mx-auto">
+        <BlogHeroSection />
+        <BlogPostsSection />
+      </div>
       <SiteFooter />
     </main>
   );

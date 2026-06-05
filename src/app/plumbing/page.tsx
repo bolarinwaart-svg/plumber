@@ -18,14 +18,16 @@ export default function PlumbingPage() {
   return (
     <main className="flex min-h-screen flex-col bg-[#eff6ff]">
       <SiteNav activePath="/plumbing" />
-      <PlumbingHeroSection />
-      <PlumbingServicesSection />
-      <PlumbingSolutionsSection />
-      <TestimonialSection />
-      <PlumbingEmergencySection />
-      <PlumbingCtaSection />
-      <PlumbingFaqSection />
-      <div className="flex-1" />
+      <div className="w-full max-w-[1512px] mx-auto">
+        <PlumbingHeroSection />
+        <PlumbingServicesSection />
+        <PlumbingSolutionsSection />
+        <TestimonialSection />
+        <PlumbingEmergencySection />
+        <PlumbingCtaSection />
+        <PlumbingFaqSection />
+        <div className="flex-1" />
+      </div>
       <SiteFooter />
     </main>
   );

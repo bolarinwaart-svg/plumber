@@ -14,7 +14,7 @@ export async function TestimonialSection() {
       tone="white"
       radius="lg"
       padding="md"
-      className="pb-6"
+      className=""
       innerClassName="flex flex-col gap-8"
     >
       <div className="flex flex-col gap-6 min-[744px]:max-[1023px]:flex-row min-[744px]:max-[1023px]:items-start min-[744px]:max-[1023px]:justify-between lg:flex-row lg:items-start lg:justify-between lg:gap-[153px]">

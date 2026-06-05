@@ -18,13 +18,15 @@ export default function HeatingPage() {
   return (
     <main className="flex min-h-screen flex-col bg-[#eff6ff]">
       <SiteNav activePath="/heating" />
-      <HeatingHeroSection />
-      <HeatingServicesSection />
-      <HeatingSolutionsSection />
-      <TestimonialSection />
-      <HeatingInstallationSection />
-      <HeatingCtaSection />
-      <PlumbingFaqSection />
+      <div className="w-full max-w-[1512px] mx-auto">
+        <HeatingHeroSection />
+        <HeatingServicesSection />
+        <HeatingSolutionsSection />
+        <TestimonialSection />
+        <HeatingInstallationSection />
+        <HeatingCtaSection />
+        <PlumbingFaqSection />
+      </div>
       <SiteFooter />
     </main>
   );
